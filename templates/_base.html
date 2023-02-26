@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="" />
+    <!-- description -->
+    <meta
+      name="description"
+      content="Becki one page html5 template for business"
+    />
+    <!-- keywords -->
+    <meta
+      name="keywords"
+      content="creative, fullscreen, business, photography, portfolio, one page, bootstrap responsive, start-up, ui/ux, html5, css3, studio, branding, creative design, multipurpose, parallax, personal, masonry, grid, coming soon, carousel, career"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}" />
+
+    <link
+      rel="stylesheet"
+      href="/ir media/html website/becki-creative-parallax-one-page-html-template-2022-02-21-23-53-03-utc/Main_Html_Source/Documentation/css/"
+    />
+
+    <!-- Core Style Sheets -->
+    <link rel="stylesheet" href="{% static 'assets/css/master.css' %}" />
+    <!-- Responsive Style Sheets -->
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}" />
+    <!-- Revolution Style Sheets -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'revolution/css/settings.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'revolution/css/layers.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'revolution/css/navigation.css' %}"
+    />
+  </head>
+  <body>
+    <!--== Wrapper Start ==-->
+    <div class="wrapper">
+      {% include '_navbar.html' %}
+      {% block content %}{% endblock content %}
+
+      {% include '_footer.html' %}
+    </div>
+    <!--== Wrapper End ==-->
+
+    {% include '_scripts.html' %}
+  </body>
+</html>
