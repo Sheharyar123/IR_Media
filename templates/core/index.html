@@ -1,4 +1,5 @@
 {% extends '_base.html' %}
+{% load static %}
 
 {% block title %}IR Media | Creative Agency{% endblock title %}
 
@@ -53,7 +54,7 @@
             >
             <!-- MAIN IMAGE -->
             <img
-                src="assets/images/slides/home-bg-1.jpg"
+                src="{% static 'assets/images/slides/home-bg-1.jpg' %}"
                 alt=""
                 data-bgposition="center center"
                 data-bgfit="cover"
@@ -199,7 +200,7 @@
             >
             <!-- MAIN IMAGE -->
             <img
-                src="assets/videos/agency.mp4"
+                src="{% static 'assets/videos/agency.mp4' %}"
                 alt=""
                 data-bgposition="center center"
                 data-bgfit="cover"
@@ -216,7 +217,7 @@
                 data-volume="mute"
                 data-videowidth="100%"
                 data-videoheight="100%"
-                data-videomp4="assets/videos/agency.mp4"
+                data-videomp4="{% static 'assets/videos/agency.mp4' %}"
                 data-videopreload="auto"
                 data-videoloop="loop"
                 data-aspectratio="16:9"
@@ -331,7 +332,7 @@
             >
             <!-- MAIN IMAGE -->
             <img
-                src="assets/images/slides/home-bg-2.jpg"
+                src="{% static 'assets/images/slides/home-bg-2.jpg' %}"
                 alt=""
                 data-bgposition="center center"
                 data-bgfit="cover"
@@ -524,7 +525,7 @@
         <div class="col-md-6 col-sm-12">
             <div class="responsive-screen">
             <img
-                src="assets/images/laptop.png"
+                src="{% static 'assets/images/laptop.png' %}"
                 class="img-responsive"
                 alt="Laptop"
             />
@@ -609,7 +610,7 @@
             <div class="team-member">
                 <div class="team-thumb">
                 <div class="thumb-overlay"></div>
-                <img src="assets/images/team/team-1.jpg" alt="" />
+                <img src="{% static 'assets/images/team/team-1.jpg' %}" alt="" />
                 <div class="member-info text-center gradient-bg">
                     <h3>Tom Bills</h3>
                     <span class="title">Web Designer</span>
@@ -639,7 +640,7 @@
             <div class="team-member">
                 <div class="team-thumb">
                 <div class="thumb-overlay"></div>
-                <img src="assets/images/team/team-2.jpg" alt="" />
+                <img src="{% static 'assets/images/team/team-2.jpg' %}" alt="" />
                 <div class="member-info text-center gradient-bg-two">
                     <h3>Sara Adams</h3>
                     <span class="title">CEO of IR Media Agency</span>
@@ -669,7 +670,7 @@
             <div class="team-member">
                 <div class="team-thumb">
                 <div class="thumb-overlay"></div>
-                <img src="assets/images/team/team-3.jpg" alt="" />
+                <img src="{% static 'assets/images/team/team-3.jpg' %}" alt="" />
                 <div class="member-info text-center gradient-bg">
                     <h3>Enzo William</h3>
                     <span class="title">Photographer</span>
@@ -698,7 +699,7 @@
             <div class="team-member">
                 <div class="team-thumb">
                 <div class="thumb-overlay"></div>
-                <img src="assets/images/team/team-1.jpg" alt="" />
+                <img src="{% static 'assets/images/team/team-1.jpg' %}" alt="" />
                 <div class="member-info text-center gradient-bg">
                     <h3>Tom Bills</h3>
                     <span class="title">Web Designer</span>
@@ -728,7 +729,7 @@
             <div class="team-member">
                 <div class="team-thumb">
                 <div class="thumb-overlay"></div>
-                <img src="assets/images/team/team-2.jpg" alt="" />
+                <img src="{% static 'assets/images/team/team-2.jpg' %}" alt="" />
                 <div class="member-info text-center gradient-bg-two">
                     <h3>Sara Adams</h3>
                     <span class="title">CEO of IR Media Agency</span>
@@ -758,7 +759,7 @@
             <div class="team-member">
                 <div class="team-thumb">
                 <div class="thumb-overlay"></div>
-                <img src="assets/images/team/team-3.jpg" alt="" />
+                <img src="{% static 'assets/images/team/team-3.jpg' %}" alt="" />
                 <div class="member-info text-center gradient-bg">
                     <h3 class="raleway-font font-400">Anna Roxx</h3>
                     <span class="title">Photographer</span>
@@ -904,7 +905,7 @@
         <div class="col-md-7 col-xs-12">
             <img
             class="img-responsive"
-            src="assets/images/responsive-screen.png"
+            src="{% static 'assets/images/responsive-screen.png' %}"
             alt=""
             />
         </div>
@@ -1036,7 +1037,7 @@
             <div class="cbp-item branding col-md-4 col-sm-6 with-spacing">
                 <div class="portfolio-item border-white-15">
                 <a href="#">
-                    <img src="assets/images/portfolio/grid/1.jpg" alt="" />
+                    <img src="{% static 'assets/images/portfolio/grid/1.jpg' %}" alt="" />
                     <div class="portfolio-info gradient-bg">
                     <div class="centrize">
                         <div class="v-center white-color">
@@ -1052,7 +1053,7 @@
             <div class="cbp-item print branding col-md-4 col-sm-6 with-spacing">
                 <div class="portfolio-item border-white-15">
                 <a href="#">
-                    <img src="assets/images/portfolio/grid/2.jpg" alt="" />
+                    <img src="{% static 'assets/images/portfolio/grid/2.jpg' %}" alt="" />
                     <div class="portfolio-info gradient-bg">
                     <div class="centrize">
                         <div class="v-center white-color">
@@ -1068,7 +1069,7 @@
             <div class="cbp-item print branding col-md-4 col-sm-6 with-spacing">
                 <div class="portfolio-item border-white-15">
                 <a href="#">
-                    <img src="assets/images/portfolio/grid/3.jpg" alt="" />
+                    <img src="{% static 'assets/images/portfolio/grid/3.jpg' %}" alt="" />
                     <div class="portfolio-info gradient-bg">
                     <div class="centrize">
                         <div class="v-center white-color">
@@ -1084,7 +1085,7 @@
             <div class="cbp-item branding col-md-4 col-sm-6 with-spacing">
                 <div class="portfolio-item border-white-15">
                 <a href="#">
-                    <img src="assets/images/portfolio/grid/4.jpg" alt="" />
+                    <img src="{% static 'assets/images/portfolio/grid/4.jpg' %}" alt="" />
                     <div class="portfolio-info gradient-bg">
                     <div class="centrize">
                         <div class="v-center white-color">
@@ -1102,7 +1103,7 @@
             >
                 <div class="portfolio-item border-white-15">
                 <a href="#">
-                    <img src="assets/images/portfolio/grid/5.jpg" alt="" />
+                    <img src="{% static 'assets/images/portfolio/grid/5.jpg' %}" alt="" />
                     <div class="portfolio-info gradient-bg">
                     <div class="centrize">
                         <div class="v-center white-color">
@@ -1120,7 +1121,7 @@
             >
                 <div class="portfolio-item border-white-15">
                 <a href="#">
-                    <img src="assets/images/portfolio/grid/6.jpg" alt="" />
+                    <img src="{% static 'assets/images/portfolio/grid/6.jpg' %}" alt="" />
                     <div class="portfolio-info gradient-bg">
                     <div class="centrize">
                         <div class="v-center white-color">
@@ -1138,7 +1139,7 @@
             >
                 <div class="portfolio-item border-white-15">
                 <a href="#">
-                    <img src="assets/images/portfolio/grid/7.jpg" alt="" />
+                    <img src="{% static 'assets/images/portfolio/grid/7.jpg' %}" alt="" />
                     <div class="portfolio-info gradient-bg">
                     <div class="centrize">
                         <div class="v-center white-color">
@@ -1156,7 +1157,7 @@
             >
                 <div class="portfolio-item border-white-15">
                 <a href="#">
-                    <img src="assets/images/portfolio/grid/8.jpg" alt="" />
+                    <img src="{% static 'assets/images/portfolio/grid/8.jpg' %}" alt="" />
                     <div class="portfolio-info gradient-bg">
                     <div class="centrize">
                         <div class="v-center white-color">
@@ -1174,7 +1175,7 @@
             >
                 <div class="portfolio-item border-white-15">
                 <a href="#">
-                    <img src="assets/images/portfolio/grid/9.jpg" alt="" />
+                    <img src="{% static 'assets/images/portfolio/grid/9.jpg' %}" alt="" />
                     <div class="portfolio-info gradient-bg">
                     <div class="centrize">
                         <div class="v-center white-color">
@@ -1196,7 +1197,7 @@
     <!--== Video Start ==-->
     <section
     class="parallax-bg fixed-bg"
-    data-parallax-bg-image="assets/images/background/parallax-bg-2.jpg"
+    data-parallax-bg-image="{% static 'assets/images/background/parallax-bg-2.jpg' %}"
     data-parallax-speed="0.5"
     data-parallax-direction="up"
     >
@@ -1350,7 +1351,7 @@
                 <div class="testimonial-content">
                 <img
                     class="img-responsive img-circle text-center"
-                    src="assets/images/team/avatar-1.jpg"
+                    src="{% static 'assets/images/team/avatar-1.jpg' %}"
                     alt="avatar-1"
                 />
                 <h4 class="font-600 mb-0 raleway-font">John Smith</h4>
@@ -1376,7 +1377,7 @@
                 <div class="testimonial-content">
                 <img
                     class="img-responsive img-circle text-center"
-                    src="assets/images/team/avatar-2.jpg"
+                    src="{% static 'assets/images/team/avatar-2.jpg' %}"
                     alt="avatar-2"
                 />
                 <h4 class="font-600 mb-0 raleway-font">Sarah Jones</h4>
@@ -1401,7 +1402,7 @@
                 <div class="testimonial-content">
                 <img
                     class="img-responsive img-circle"
-                    src="assets/images/team/avatar-3.jpg"
+                    src="{% static 'assets/images/team/avatar-3.jpg' %}"
                     alt="avatar-1"
                 />
                 <h4 class="font-600 mb-0 raleway-font">Michael Brown</h4>
@@ -1426,7 +1427,7 @@
                 <div class="testimonial-content">
                 <img
                     class="img-responsive img-circle"
-                    src="assets/images/team/avatar-4.jpg"
+                    src="{% static 'assets/images/team/avatar-4.jpg' %}"
                     alt="avatar-1"
                 />
                 <h4 class="font-600 mb-0 raleway-font">John Doe</h4>
@@ -1458,70 +1459,70 @@
             <div class="client-logo">
             <img
                 class="img-responsive"
-                src="assets/images/clients/1.png"
+                src="{% static 'assets/images/clients/1.png' %}"
                 alt="01"
             />
             </div>
             <div class="client-logo">
             <img
                 class="img-responsive"
-                src="assets/images/clients/2.png"
+                src="{% static 'assets/images/clients/2.png' %}"
                 alt="02"
             />
             </div>
             <div class="client-logo">
             <img
                 class="img-responsive"
-                src="assets/images/clients/3.png"
+                src="{% static 'assets/images/clients/3.png' %}"
                 alt="03"
             />
             </div>
             <div class="client-logo">
             <img
                 class="img-responsive"
-                src="assets/images/clients/4.png"
+                src="{% static 'assets/images/clients/4.png' %}"
                 alt="04"
             />
             </div>
             <div class="client-logo">
             <img
                 class="img-responsive"
-                src="assets/images/clients/5.png"
+                src="{% static 'assets/images/clients/5.png' %}"
                 alt="05"
             />
             </div>
             <div class="client-logo">
             <img
                 class="img-responsive"
-                src="assets/images/clients/6.png"
+                src="{% static 'assets/images/clients/6.png' %}"
                 alt="06"
             />
             </div>
             <div class="client-logo">
             <img
                 class="img-responsive"
-                src="assets/images/clients/7.png"
+                src="{% static 'assets/images/clients/7.png' %}"
                 alt="07"
             />
             </div>
             <div class="client-logo">
             <img
                 class="img-responsive"
-                src="assets/images/clients/8.png"
+                src="{% static 'assets/images/clients/8.png' %}"
                 alt="08"
             />
             </div>
             <div class="client-logo">
             <img
                 class="img-responsive"
-                src="assets/images/clients/9.png"
+                src="{% static 'assets/images/clients/9.png' %}"
                 alt="09"
             />
             </div>
             <div class="client-logo">
             <img
                 class="img-responsive"
-                src="assets/images/clients/10.png"
+                src="{% static 'assets/images/clients/10.png' %}"
                 alt="10"
             />
             </div>
@@ -1668,96 +1669,60 @@
             <form
             name="contact-form"
             id="contact-form"
-            action="php/contact.php"
+            action="{% url 'core:index' %}"
             method="POST"
             class="contact-form-style-01"
             >
             <div class="messages"></div>
             <div class="row">
                 <div class="col-md-6 col-sm-6">
-                <div class="form-group">
-                    <label class="sr-only" for="name">Name</label>
-                    <input
-                    type="text"
-                    name="name"
-                    class="md-input"
-                    id="name"
-                    placeholder="Name *"
-                    required
-                    data-error="Your Name is Required"
-                    />
-                    <div class="help-block with-errors"></div>
-                </div>
+                    <div class="form-group">
+                        {{ form.first_name }}
+                        {% comment %} <div class="help-block with-errors"></div> {% endcomment %}
+                    </div>
                 </div>
                 <div class="col-md-6 col-sm-6">
-                <div class="form-group">
-                    <label class="sr-only" for="email">Email</label>
-                    <input
-                    type="email"
-                    name="email"
-                    class="md-input"
-                    id="email"
-                    placeholder="Email *"
-                    required
-                    data-error="Please Enter Valid Email"
-                    />
-                    <div class="help-block with-errors"></div>
+                    <div class="form-group">
+                        {{ form.last_name }}
+                        {% comment %} <div class="help-block with-errors"></div> {% endcomment %}
+                    </div>
                 </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                        {{ form.email }}
+                        {% comment %} <div class="help-block with-errors"></div> {% endcomment %}
+                    </div>
                 </div>
-                <div class="col-md-12 col-sm-12">
-                <div class="form-group">
-                    <label class="sr-only" for="subject">Subject</label>
-                    <input
-                    type="text"
-                    name="subject"
-                    class="md-input"
-                    id="subject"
-                    placeholder="Subject"
-                    />
-                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="form-group">
+                        {{ form.phone_no }}
+                        {% comment %} <div class="help-block with-errors"></div> {% endcomment %}
+                    </div>
                 </div>
                 <div class="col-md-12 col-sm-12">
-                <div class="form-group">
-                    <label class="sr-only" for="message">Project Details</label>
-                    <textarea
-                    name="message"
-                    class="md-textarea"
-                    id="message"
-                    rows="7"
-                    placeholder="Project Details"
-                    required
-                    data-error="Please, Leave us a message"
-                    ></textarea>
-                    <div class="help-block with-errors"></div>
-                </div>
+                    <div class="form-group">
+                        {{ form.subject }}
+                    </div>
                 </div>
                 <div class="col-md-12 col-sm-12">
-                <select name="orderby" class="orderby">
-                    <option value="" selected="selected">Your Budget</option>
-                    <option value="">$1000 - $10,000</option>
-                    <option value="">$10,000 - $20,000</option>
-                    <option value="">$20,000 - $50,000</option>
-                    <option value="">$50,000+</option>
-                </select>
-                <input type="hidden" name="paged" value="1" />
-                <input type="hidden" name="min_price" value="20" /><input
-                    type="hidden"
-                    name="max_price"
-                    value="290"
-                />
+                    <div class="form-group">
+                        {{ form.project_details }}
+                        {% comment %} <div class="help-block with-errors"></div> {% endcomment %}
+                    </div>
                 </div>
                 <div class="col-md-12 col-sm-12">
-                <div class="text-left mt-20">
-                    <button
-                    type="submit"
-                    name="submit"
-                    class="btn btn-outline btn-md btn-circle btn-animate remove-margin"
-                    >
-                    <span
-                        >Send Message <i class="ion-android-arrow-forward"></i
-                    ></span>
-                    </button>
-                </div>
+                    <div class="text-left mt-20">
+                        <button
+                        id="contact-btn"
+                        type="submit"
+                        name="submit"
+                        class="btn btn-outline btn-md btn-circle btn-animate remove-margin"
+                        >
+                        <span
+                            >Send Message <i class="ion-android-arrow-forward"></i
+                        ></span>
+                        </button>
+                    </div>
                 </div>
             </div>
             </form>
