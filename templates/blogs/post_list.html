@@ -5,23 +5,25 @@
 {% block content %}
 
 
-  <!--== Page Title Start ==-->
   <div class="transition-none">
       <section class="title-hero-bg parallax-effect" style="background: url({% static 'assets/images/title-bg/title-bg-2.jpg' %}) no-repeat center center/cover;">
+        <h1 class="raleway-font font-300 text-center pt-20" style="color: #333;">Blog Posts</h1>
       </section>
   </div>
-  <!--== Page Title End ==-->
 
-  <!--== Blog Classic Post Start ==-->
   <section class="white-bg pt-30">
     <div class="container">
       <div class="row blog-style-01">
-        <h1 class="raleway-font font-300 text-center" style="font-size: 40px;">Blog Posts</h1>
         {% for post in post_list %}
-          <div class="col-md-4 col-sm-4 col-xs-12 mb-30">
+          <div class="col-md-6 col-sm-12 col-xs-12 mb-20">
             <div class="post">
+              {% if post.img %}
+                <div class="post-img"> <img class="img-responsive" src="{{ post.img.url }}" style="height: 350px !important;" /> </div>
+              {% else %}
+                <div class="post-img"> <img class="img-responsive" src="{% static 'assets/images/post/post-img-01.jpg' %}" style="height: 350px !important;"/> </div>
+              {% endif %}
               <div class="post-info all-padding-40">
-                <h3><a href="{{ post.get_absolute_url }}">{{ post.subject|truncatewords:50 }}</a></h3>
+                <h3><a href="{{ post.get_absolute_url }}">{{ post.subject|truncatewords:50|title }}</a></h3>
                 <h6>{{ post.created_date }}</h6>
                 <hr>
                 <p class="mt-10"> <span class="extras-wrap"><i class="icofont icofont-clock-time"></i><span>{{ post.created_on|timesince|title }}</span></span> </span> </p>
@@ -31,24 +33,38 @@
         {% endfor %}
       </div>
 
+      {% if is_paginated %}
         <div class="row mt-100">
             <div class="col-md-12">
                 <div class="text-center">
                   <div class="pagination text-uppercase dark-color">
                         <ul>
-                            <li><a href="#"><i class="icofont icofont-long-arrow-left mr-5 xs-display-none"></i> Prev</a></li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">Next <i class="icofont icofont-long-arrow-right ml-5 xs-display-none"></i></a></li>
+                          {% if page_obj.has_previous %}
+                          <li><a href="?page={{ page_obj.previous_page_number }}" class="btn">&#10094; Prev</a></li>
+                          {% else %}
+                          <li><a href="#" class="btn btn--disabled">&#10094; Prev</a></li>
+                        {% endif %}
+    
+                        {% for i in page_obj.paginator.page_range %}
+                            {% if i == page_obj.number %}
+                                <li><a href="?page={{ i }}" class="btn btn--sub">{{ i }}</a></li>
+                            {% else %}
+                                <li><a href="?page={{ i }}" class="btn">{{ i }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        
+                        {% if page_obj.has_next %}
+                            <li><a href="?page={{ page_obj.next_page_number }}" class="btn">Next &#10095;</a></li>
+                        {% else %}
+                            <li><a href="#" class="btn btn--disabled">Next &#10095;</a></li>
+                        {% endif %}
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+      {% endif %}
     </div>
-
   </section>
-  <!--== Blog Classic Post End ==-->
 
 {% endblock content %}

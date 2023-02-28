@@ -73,15 +73,15 @@
         data-in="fadeIn"
         data-out="fadeOut"
       >
-        <li><a class="page-scroll" href="#home">Home</a></li>
-        <li><a class="page-scroll" href="#feature">Features</a></li>
-        <li><a class="page-scroll" href="#team">Team</a></li>
-        <li><a class="page-scroll" href="#service">Services</a></li>
-        <li><a class="page-scroll" href="#about">About</a></li>
-        <li><a class="page-scroll" href="#portfolio">Portfolio</a></li>
-        <li><a class="page-scroll" href="#pricing">Pricings</a></li>
+        <li><a class="page-scroll" href="{% url 'core:index' %}">Home</a></li>
+        <li><a class="page-scroll" href="{% url 'core:index' %}#feature">Features</a></li>
+        <li><a class="page-scroll" href="{% url 'core:index' %}#team">Team</a></li>
+        <li><a class="page-scroll" href="{% url 'core:index' %}#service">Services</a></li>
+        <li><a class="page-scroll" href="{% url 'core:index' %}#about">About</a></li>
+        <li><a class="page-scroll" href="{% url 'core:index' %}#portfolio">Portfolio</a></li>
+        <li><a class="page-scroll" href="{% url 'core:index' %}#pricing">Pricings</a></li>
         <li><a class="page-scroll" href="{% url 'blogs:post_list' %}">Blog</a></li>
-        <li><a class="page-scroll" href="#contact">Contact</a></li>
+        <li><a class="page-scroll" href="{% url 'core:index' %}#contact">Contact</a></li>
       </ul>
     </div>
     <!--== /.navbar-collapse ==-->
@@ -96,31 +96,31 @@
     <div class="widget mt-120">
       <ul class="link">
         <li class="link-item">
-          <a class="page-scroll" href="#home">Home</a>
+          <a class="page-scroll" href="{% url 'core:index' %}">Home</a>
         </li>
         <li class="link-item">
-          <a class="page-scroll" href="#feature">Features</a>
+          <a class="page-scroll" href="{% url 'core:index' %}#feature">Features</a>
         </li>
         <li class="link-item">
-          <a class="page-scroll" href="#team">Team</a>
+          <a class="page-scroll" href="{% url 'core:index' %}#team">Team</a>
         </li>
         <li class="link-item">
-          <a class="page-scroll" href="#service">Services</a>
+          <a class="page-scroll" href="{% url 'core:index' %}#service">Services</a>
         </li>
         <li class="link-item">
-          <a class="page-scroll" href="#about">About</a>
+          <a class="page-scroll" href="{% url 'core:index' %}#about">About</a>
         </li>
         <li class="link-item">
-          <a class="page-scroll" href="#portfolio">Portfolio</a>
+          <a class="page-scroll" href="{% url 'core:index' %}#portfolio">Portfolio</a>
         </li>
         <li class="link-item">
-          <a class="page-scroll" href="#pricing">Pricings</a>
+          <a class="page-scroll" href="{% url 'core:index' %}#pricing">Pricings</a>
         </li>
         <li class="link-item">
           <a class="page-scroll" href="#blog">Blog</a>
         </li>
         <li class="link-item">
-          <a class="page-scroll" href="#contact">Contact</a>
+          <a class="page-scroll" href="{% url 'core:index' %}#contact">Contact</a>
         </li>
       </ul>
     </div>

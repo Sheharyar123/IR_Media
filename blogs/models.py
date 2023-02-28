@@ -23,6 +23,7 @@ class Post(models.Model):
     body = RichTextField()
     is_active = models.BooleanField(default=True)
     tags = models.ManyToManyField(Tag, blank=True)
+    img = models.ImageField(null=True, blank=True, upload_to="blogs")
     created_date = models.DateField(auto_now_add=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)

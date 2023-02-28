@@ -8,6 +8,7 @@ django-js-asset==2.0.0
 environs==9.5.0
 marshmallow==3.19.0
 packaging==23.0
+Pillow==9.4.0
 python-dotenv==1.0.0
 sqlparse==0.4.3
 tzdata==2022.7
