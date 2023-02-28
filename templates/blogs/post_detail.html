@@ -1,0 +1,97 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}{{ post.subject|truncatewords:10 }}{% endblock title %}
+
+{% block content %}
+
+  <div class="transition-none">
+      <section class="title-hero-bg parallax-effect" style="background: url({% static 'assets/images/title-bg/title-bg-2.jpg' %}) no-repeat center center/cover;">
+      </section>
+  </div>
+
+  <section class="white-bg pt-50">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 col-sm-9 col-xs-12 xs-mb-50">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 mb-50">
+              <div class="post">
+                <div class="post-info all-padding-40 bordered">
+                    <h3 class="font-20px text-uppercase"><a href="blog-grid.html">{{ post.subject }}</a></h3>
+                    <h6>Post on {{ post.created_date }}</h6>
+                    <hr>
+                    <p class="font-16px">{{ post.body|safe }}</p>
+                    {% comment %} <p class="mt-10"> <span> <a class="extras-wrap" href="#"><i class="icofont icofont-chat"></i><span>5 Comments</span></a> <span class="extras-wrap"><i class="icofont icofont-clock-time"></i><span>8 Minutes</span></span> </span> </p>
+                    <a class="readmore" href="#"><span>Read More</span></a> {% endcomment %}
+                </div>
+              </div>
+            </div>
+            <!--== Post End ==-->
+
+            <div class="col-md-12 col-sm-12 col-xs-12 mb-50">
+              {% comment %} <div class="blog-standard">
+                <p class="font-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tempor lacus et tellus consectetur, vel pretium ante elementum. Aliquam elementum dignissim tellus a venenatis. Vestibulum vel sem pulvinar, scelerisque orci non, interdum magna. Sed vestibulum elit sed placerat semper. Quisque consectetur sollicitudin purus et tempus. Sed sit amet dapibus magna. Curabitur non odio magna. Fusce viverra elit eget orci ultricies dapibus.</p>
+                <blockquote>
+                  <p>Donec dui ipsum, pulvinar sit amet mattis quis, dapibus eu libero. Curabitur lobortis, diam non semper placerat, ipsum felis pulvinar magna, quis dapibus enim velit vel lorem.</p>
+                </blockquote>
+              </div> {% endcomment %}
+              {% if post_tags %}
+                <div class="post-tags">
+                  {% for tag in post_tags|slice:":5" %} 
+                    <a href="#">{{ tag.name|upper }}</a>
+                  {% endfor %} 
+                </div>
+              {% endif %}
+            {% if recent_posts %}
+              <h2 class="recent-post-title">Recent Posts</h2>
+              {% for post in recent_posts %}
+                <div class="row blog-style-01">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                      <div class="post">
+                        <div class="post-info all-padding-20">
+                          <h3><a href="{{ post.get_absolute_url }}">{{ post.subject|truncatewords:50 }}</a></h3>
+                          <h6>{{ post.created_on }}</h6>
+                          <hr>
+                          <p class="mt-10"><span class="extras-wrap"><i class="icofont icofont-clock-time"></i><span>{{ posr.created_at|timesince|title }}</span></span> </span> </p>
+                          <a class="readmore" href="{{ post.get_absolute_url }}"><span>Read More</span></a> </div>
+                      </div>
+                    </div>
+                </div>
+              {% endfor %}
+            {% endif %}
+          </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-3 col-xs-12">
+          <div class="sidebar_widget widget_tag_cloud mb-50">
+            <h5 class="aside-title text-uppercase">Tags</h5>
+            {% if post_tags %}
+            <div class="post-tags">
+              {% for tag in post_tags %} 
+                <a href="#">{{ tag.name|upper }}</a> 
+              {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="social-icons-style-06 mb-50">
+          <h5 class="aside-title text-uppercase">Follow Us</h5>
+          <ul class="xs-icon">
+            <li><a class="icon facebook" href="#."><i class="icofont icofont-social-facebook"></i></a></li>
+            <li><a class="icon twitter" href="#."><i class="icofont icofont-social-twitter"></i></a></li>
+            <li><a class="icon tumblr" href="#."><i class="icofont icofont-social-tumblr"></i></a></li>
+            <li><a class="icon flicker" href="#."><i class="icofont icofont-social-flikr"></i></a></li>
+            <li><a class="icon instagram" href="#."><i class="icofont icofont-social-instagram"></i></a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+{% endblock content %}
+
+  

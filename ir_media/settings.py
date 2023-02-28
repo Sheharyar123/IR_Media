@@ -33,6 +33,8 @@ INSTALLED_APPS = [
     "core.apps.CoreConfig",
     "accounts.apps.AccountsConfig",
     "blogs.apps.BlogsConfig",
+    # Third Party
+    "ckeditor",
 ]
 
 MIDDLEWARE = [

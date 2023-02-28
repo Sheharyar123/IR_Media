@@ -7,42 +7,25 @@
 
   <!--== Page Title Start ==-->
   <div class="transition-none">
-      <section class="title-hero-bg parallax-effect" style="background-image: url({% static 'assets/images/title-bg/title-bg-2.jpg' %});">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="page-title text-center white-color">
-                <h1 class="raleway-font font-300">Blog Posts</h1>
-                <div class="breadcrumb mt-20">
-                    <!-- Breadcrumb Start -->
-                        <ul>
-                          <li><a href="{% url 'core:index' %}">Home</a></li>
-                          <li>Blog Posts</li>
-                        </ul>
-                    <!-- Breadcrumb End -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
+      <section class="title-hero-bg parallax-effect" style="background: url({% static 'assets/images/title-bg/title-bg-2.jpg' %}) no-repeat center center/cover;">
       </section>
   </div>
   <!--== Page Title End ==-->
 
   <!--== Blog Classic Post Start ==-->
-  <section class="white-bg">
+  <section class="white-bg pt-30">
     <div class="container">
       <div class="row blog-style-01">
+        <h1 class="raleway-font font-300 text-center" style="font-size: 40px;">Blog Posts</h1>
         {% for post in post_list %}
           <div class="col-md-4 col-sm-4 col-xs-12 mb-30">
             <div class="post">
               <div class="post-info all-padding-40">
-                <h3><a href="blog-grid.html">{{ post.subject|truncatewords:50 }}</a></h3>
+                <h3><a href="{{ post.get_absolute_url }}">{{ post.subject|truncatewords:50 }}</a></h3>
                 <h6>{{ post.created_date }}</h6>
                 <hr>
-                <p class="mt-10"> <span> <a class="extras-wrap" href="#"><i class="icofont icofont-chat"></i><span>5 Comments</span></a> <span class="extras-wrap"><i class="icofont icofont-clock-time"></i><span>{{ post.created_on|timesince|title }}</span></span> </span> </p>
-                <a class="readmore" href="#"><span>Read More</span></a> </div>
+                <p class="mt-10"> <span class="extras-wrap"><i class="icofont icofont-clock-time"></i><span>{{ post.created_on|timesince|title }}</span></span> </span> </p>
+                <a class="readmore" href="{{ post.get_absolute_url }}"><span>Read More</span></a> </div>
             </div>
           </div>
         {% endfor %}
