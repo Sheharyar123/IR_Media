@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "core.apps.CoreConfig",
     "accounts.apps.AccountsConfig",
     "blogs.apps.BlogsConfig",
+    "projects.apps.ProjectsConfig",
     # Third Party
     "ckeditor",
 ]

@@ -1016,183 +1016,194 @@
 
     <!--== Portfolio Start ==-->
     <section class="grey-bg" id="portfolio">
-    <div class="container">
-        <div class="row">
-        <div class="col-md-8 centerize-col text-center">
-            <div class="section-title">
-            <h2 class="raleway-font default-color">Our Project Gallery</h2>
-            <h1 class="raleway-font">Our Awesome Portfolio</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 centerize-col text-center">
+                    <div class="section-title">
+                    <h2 class="raleway-font default-color">Our Project Gallery</h2>
+                    <h1 class="raleway-font">Our Awesome Portfolio</h1>
+                    </div>
+                    <p>
+                    Welcome to Our Awesome Portfolio! We are a digital solutions agency
+                    that specializes in creating innovative and effective digital
+                    solutions for businesses of all sizes. Our team of experienced
+                    professionals is dedicated to providing the highest quality services,
+                    tailored to each customer’s individual needs.
+                    </p>
+                </div>
             </div>
-            <p>
-            Welcome to Our Awesome Portfolio! We are a digital solutions agency
-            that specializes in creating innovative and effective digital
-            solutions for businesses of all sizes. Our team of experienced
-            professionals is dedicated to providing the highest quality services,
-            tailored to each customer’s individual needs.
-            </p>
+
+            <div class="row mt-50">
+                <div class="col-md-12">
+                    <div id="portfolio-gallery" class="cbp">
+                    {% for project in projects %}
+                        <div class="cbp-item branding col-md-4 col-sm-6 with-spacing">
+                            <div class="portfolio-item border-white-15">
+                                <a href="{{ project.get_absolute_url }}">
+                                    {% if project.img %}
+                                        <img src="{{ project.img.url }}" alt="" />
+                                    {% else %}
+                                        <img src="{% static 'assets/images/post/post-01' %}" />
+                                    {% endif %}
+                                    <div class="portfolio-info gradient-bg">
+                                        <div class="centrize">
+                                            <div class="v-center white-color">
+                                                <h3>{{ project.title }}</h3>
+                                                {% for category in project.categories.all %}
+                                                    {% if category != project.categories.last %}
+                                                        <p style="display: inline;">{{ category.name}}, </p>
+                                                    {% endif %}
+                                                {% endfor %}
+                                                <p style="display: inline;">{{ project.categories.last }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    {% comment %} <div class="cbp-item print branding col-md-4 col-sm-6 with-spacing">
+                        <div class="portfolio-item border-white-15">
+                        <a href="#">
+                            <img src="{% static 'assets/images/portfolio/grid/2.jpg' %}" alt="" />
+                            <div class="portfolio-info gradient-bg">
+                            <div class="centrize">
+                                <div class="v-center white-color">
+                                <h3>Adidas</h3>
+                                <p>Branding, UI/UX</p>
+                                </div>
+                            </div>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+
+                    <div class="cbp-item print branding col-md-4 col-sm-6 with-spacing">
+                        <div class="portfolio-item border-white-15">
+                        <a href="#">
+                            <img src="{% static 'assets/images/portfolio/grid/3.jpg' %}" alt="" />
+                            <div class="portfolio-info gradient-bg">
+                            <div class="centrize">
+                                <div class="v-center white-color">
+                                <h3>Tudor</h3>
+                                <p>Design, Stationery</p>
+                                </div>
+                            </div>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+
+                    <div class="cbp-item branding col-md-4 col-sm-6 with-spacing">
+                        <div class="portfolio-item border-white-15">
+                        <a href="#">
+                            <img src="{% static 'assets/images/portfolio/grid/4.jpg' %}" alt="" />
+                            <div class="portfolio-info gradient-bg">
+                            <div class="centrize">
+                                <div class="v-center white-color">
+                                <h3>Givenchy</h3>
+                                <p>Branding, UI/UX</p>
+                                </div>
+                            </div>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="cbp-item print photography col-md-4 col-sm-6 with-spacing"
+                    >
+                        <div class="portfolio-item border-white-15">
+                        <a href="#">
+                            <img src="{% static 'assets/images/portfolio/grid/5.jpg' %}" alt="" />
+                            <div class="portfolio-info gradient-bg">
+                            <div class="centrize">
+                                <div class="v-center white-color">
+                                <h3>Rombo Prisma</h3>
+                                <p>Design, Branding</p>
+                                </div>
+                            </div>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="cbp-item branding web-design col-md-4 col-sm-6 with-spacing"
+                    >
+                        <div class="portfolio-item border-white-15">
+                        <a href="#">
+                            <img src="{% static 'assets/images/portfolio/grid/6.jpg' %}" alt="" />
+                            <div class="portfolio-info gradient-bg">
+                            <div class="centrize">
+                                <div class="v-center white-color">
+                                <h3>Chanel</h3>
+                                <p>Branding, Stationery</p>
+                                </div>
+                            </div>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="cbp-item branding advertising col-md-4 col-sm-6 with-spacing"
+                    >
+                        <div class="portfolio-item border-white-15">
+                        <a href="#">
+                            <img src="{% static 'assets/images/portfolio/grid/7.jpg' %}" alt="" />
+                            <div class="portfolio-info gradient-bg">
+                            <div class="centrize">
+                                <div class="v-center white-color">
+                                <h3>The Ordinary</h3>
+                                <p>Design, UI/UX</p>
+                                </div>
+                            </div>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="cbp-item branding photography col-md-4 col-sm-6 with-spacing"
+                    >
+                        <div class="portfolio-item border-white-15">
+                        <a href="#">
+                            <img src="{% static 'assets/images/portfolio/grid/8.jpg' %}" alt="" />
+                            <div class="portfolio-info gradient-bg">
+                            <div class="centrize">
+                                <div class="v-center white-color">
+                                <h3>Dolce & Gabbana</h3>
+                                <p>Branding, UI/UX</p>
+                                </div>
+                            </div>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="cbp-item branding web-design col-md-4 col-sm-6 with-spacing"
+                    >
+                        <div class="portfolio-item border-white-15">
+                            <a href="#">
+                                <img src="{% static 'assets/images/portfolio/grid/9.jpg' %}" alt="" />
+                                <div class="portfolio-info gradient-bg">
+                                <div class="centrize">
+                                    <div class="v-center white-color">
+                                    <h3>Nike</h3>
+                                    <p>Stationery, Design</p>
+                                    </div>
+                                </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div> {% endcomment %}
+                    </div>
+                </div>
+            </div>
         </div>
-        </div>
-
-        <div class="row mt-50">
-        <div class="col-md-12">
-            <div id="portfolio-gallery" class="cbp">
-            <div class="cbp-item branding col-md-4 col-sm-6 with-spacing">
-                <div class="portfolio-item border-white-15">
-                <a href="#">
-                    <img src="{% static 'assets/images/portfolio/grid/1.jpg' %}" alt="" />
-                    <div class="portfolio-info gradient-bg">
-                    <div class="centrize">
-                        <div class="v-center white-color">
-                        <h3>Starbucks</h3>
-                        <p>Branding, Mockup</p>
-                        </div>
-                    </div>
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            <div class="cbp-item print branding col-md-4 col-sm-6 with-spacing">
-                <div class="portfolio-item border-white-15">
-                <a href="#">
-                    <img src="{% static 'assets/images/portfolio/grid/2.jpg' %}" alt="" />
-                    <div class="portfolio-info gradient-bg">
-                    <div class="centrize">
-                        <div class="v-center white-color">
-                        <h3>Adidas</h3>
-                        <p>Branding, UI/UX</p>
-                        </div>
-                    </div>
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            <div class="cbp-item print branding col-md-4 col-sm-6 with-spacing">
-                <div class="portfolio-item border-white-15">
-                <a href="#">
-                    <img src="{% static 'assets/images/portfolio/grid/3.jpg' %}" alt="" />
-                    <div class="portfolio-info gradient-bg">
-                    <div class="centrize">
-                        <div class="v-center white-color">
-                        <h3>Tudor</h3>
-                        <p>Design, Stationery</p>
-                        </div>
-                    </div>
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            <div class="cbp-item branding col-md-4 col-sm-6 with-spacing">
-                <div class="portfolio-item border-white-15">
-                <a href="#">
-                    <img src="{% static 'assets/images/portfolio/grid/4.jpg' %}" alt="" />
-                    <div class="portfolio-info gradient-bg">
-                    <div class="centrize">
-                        <div class="v-center white-color">
-                        <h3>Givenchy</h3>
-                        <p>Branding, UI/UX</p>
-                        </div>
-                    </div>
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            <div
-                class="cbp-item print photography col-md-4 col-sm-6 with-spacing"
-            >
-                <div class="portfolio-item border-white-15">
-                <a href="#">
-                    <img src="{% static 'assets/images/portfolio/grid/5.jpg' %}" alt="" />
-                    <div class="portfolio-info gradient-bg">
-                    <div class="centrize">
-                        <div class="v-center white-color">
-                        <h3>Rombo Prisma</h3>
-                        <p>Design, Branding</p>
-                        </div>
-                    </div>
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            <div
-                class="cbp-item branding web-design col-md-4 col-sm-6 with-spacing"
-            >
-                <div class="portfolio-item border-white-15">
-                <a href="#">
-                    <img src="{% static 'assets/images/portfolio/grid/6.jpg' %}" alt="" />
-                    <div class="portfolio-info gradient-bg">
-                    <div class="centrize">
-                        <div class="v-center white-color">
-                        <h3>Chanel</h3>
-                        <p>Branding, Stationery</p>
-                        </div>
-                    </div>
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            <div
-                class="cbp-item branding advertising col-md-4 col-sm-6 with-spacing"
-            >
-                <div class="portfolio-item border-white-15">
-                <a href="#">
-                    <img src="{% static 'assets/images/portfolio/grid/7.jpg' %}" alt="" />
-                    <div class="portfolio-info gradient-bg">
-                    <div class="centrize">
-                        <div class="v-center white-color">
-                        <h3>The Ordinary</h3>
-                        <p>Design, UI/UX</p>
-                        </div>
-                    </div>
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            <div
-                class="cbp-item branding photography col-md-4 col-sm-6 with-spacing"
-            >
-                <div class="portfolio-item border-white-15">
-                <a href="#">
-                    <img src="{% static 'assets/images/portfolio/grid/8.jpg' %}" alt="" />
-                    <div class="portfolio-info gradient-bg">
-                    <div class="centrize">
-                        <div class="v-center white-color">
-                        <h3>Dolce & Gabbana</h3>
-                        <p>Branding, UI/UX</p>
-                        </div>
-                    </div>
-                    </div>
-                </a>
-                </div>
-            </div>
-
-            <div
-                class="cbp-item branding web-design col-md-4 col-sm-6 with-spacing"
-            >
-                <div class="portfolio-item border-white-15">
-                <a href="#">
-                    <img src="{% static 'assets/images/portfolio/grid/9.jpg' %}" alt="" />
-                    <div class="portfolio-info gradient-bg">
-                    <div class="centrize">
-                        <div class="v-center white-color">
-                        <h3>Nike</h3>
-                        <p>Stationery, Design</p>
-                        </div>
-                    </div>
-                    </div>
-                </a>
-                </div>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
     </section>
     <!--== Portfolio End ==-->
 

@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.generic import View
+from projects.models import Project
 
 from .forms import ContactForm
 from .utils import send_contact_email
@@ -9,7 +10,8 @@ from .utils import send_contact_email
 class HomePageView(View):
     def get(self, request, *args, **kwargs):
         form = ContactForm
-        context = {"form": form}
+        projects = Project.objects.filter(is_active=True)
+        context = {"form": form, "projects": projects}
         return render(request, "core/index.html", context)
 
     def post(self, request, *args, **kwargs):

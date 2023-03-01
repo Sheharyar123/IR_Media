@@ -1,0 +1,31 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}IR Media | {{ project.title }}{% endblock title %}
+
+{% block content %}
+    <div class="transition-none">
+        <section class="title-hero-bg parallax-effect" style="background: url({% static 'assets/images/title-bg/title-bg-2.jpg' %}) no-repeat center center/cover;">
+        </section>
+    </div>
+
+    <section class="white-bg pt-50">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 xs-mb-50">
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 mb-50">
+                  <div class="post">
+                    <div class="post-info all-padding-40">
+                        <h3 class="font-20px text-uppercase"><a href="blog-grid.html">{{ post.title }}</a></h3>
+                        <p>{{ project.description|safe }}</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </section>
+
+{% endblock content %}
