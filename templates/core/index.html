@@ -523,11 +523,11 @@
             </p>
         </div>
         <div class="col-md-6 col-sm-12">
-            <div class="responsive-screen">
+            <div>
             <img
                 src="{% static 'assets/images/laptop.png' %}"
-                class="img-responsive"
                 alt="Laptop"
+                class="img-responsive"
             />
             </div>
         </div>
@@ -902,14 +902,16 @@
         </div>
         </div>
         <div class="row mt-50">
-        <div class="col-md-7 col-xs-12">
-            <img
-            class="img-responsive"
-            src="{% static 'assets/images/responsive-screen.png' %}"
-            alt=""
-            />
+        <div class="col-md-6 col-xs-12">
+            <div class="mr-30 mt-0">
+                <img
+                    src="{% static 'assets/images/laptop.png' %}"
+                    alt="Laptop"
+                    class="img-responsive"
+                />
+            </div>
         </div>
-        <div class="col-md-5 mt-30 col-xs-12">
+        <div class="col-md-6 mt-40 col-xs-12">
             <div class="skillbar-wrap skillbar-style-01">
             <div class="skillbar" data-percent="93">
                 <span class="skillbar-title text-uppercase">Graphic Designing</span>
@@ -1451,7 +1453,7 @@
     </section>
     <!--== Testimonails End ==-->
 
-    <!--== Clients Start ==-->
+    {% comment %} <!--== Clients Start ==-->
     <div class="grey-bg pt-120 pb-120">
     <div class="container">
         <div class="row">
@@ -1530,7 +1532,7 @@
         </div>
     </div>
     </div>
-    <!--== Clients End ==-->
+    <!--== Clients End ==--> {% endcomment %}
 
     <!--== Blogs Start ==-->
     <section class="gradient-bg-two xs-pb-60" id="blog">
@@ -1557,7 +1559,7 @@
             </p>
             <p>
             <a
-                href="blog.html"
+                href="{% url 'blogs:post_list' %}"
                 class="btn btn-md btn-square btn-light-outline mt-30"
                 >See Blog Details</a
             >
@@ -1589,7 +1591,9 @@
     </div>
     <div class="container-fluid">
         <div class="row mt-50">
-        <div id="map-style-3" class="wide"></div>
+            <div class="wide">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d27051.871571398948!2d72.709505!3d32.056157!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc349b937fc26ae48!2sIR%20Media!5e0!3m2!1sen!2sus!4v1677678041154!5m2!1sen!2sus" height="600" style="border:0; width:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
     </div>
     <div class="container">
