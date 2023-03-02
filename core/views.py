@@ -35,6 +35,6 @@ class HomePageView(View):
                 send_contact_email("core/emails/send_contact_email.html", context)
                 return JsonResponse({"status": "success"})
             else:
-                return render(request, "core/index.html", {"form": form})
+                return JsonResponse({"status": "failed"})
         else:
             return JsonResponse({"status": "failed"})

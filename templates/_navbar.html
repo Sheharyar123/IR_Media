@@ -1,3 +1,4 @@
+{% load static %}
 <!--== Header Start ==-->
 <nav
   class="navbar navbar-default navbar-fixed navbar-transparent white bootsnav on no-full navbar-gradient no-border"
@@ -30,11 +31,11 @@
         <li class="side-menu">
           <a href="#"><i class="icofont icofont-navigation-menu"></i></a>
         </li>
-        <li class="search">
+        {% comment %} <li class="search">
           <a href="#" id="search-button"
             ><i class="icofont icofont-search"></i
           ></a>
-        </li>
+        </li> {% endcomment %}
       </ul>
     </div>
     <!--== End Atribute Navigation ==-->
@@ -50,17 +51,17 @@
         <i class="tr-icon ion-android-menu"></i>
       </button>
       <div class="logo">
-        <a href="index.html">
+        <a href="{% url 'core:index' %}">
           <img
             class="logo logo-display"
-            src="assets/images/logo-white.png"
+            src="{% static 'assets/images/logo-white.png' %}"
             alt=""
           />
           <img
             class="logo logo-scrolled"
-            src="assets/images/logo-white.png"
+            src="{% static 'assets/images/logo-white.png' %}"
             alt=""
-          />
+          /> 
         </a>
       </div>
     </div>
@@ -75,12 +76,12 @@
       >
         <li><a class="page-scroll" href="{% url 'core:index' %}">Home</a></li>
         <li><a class="page-scroll" href="{% url 'core:index' %}#feature">Features</a></li>
-        <li><a class="page-scroll" href="{% url 'core:index' %}#team">Team</a></li>
+        {% comment %} <li><a class="page-scroll" href="{% url 'core:index' %}#team">Team</a></li> {% endcomment %}
         <li><a class="page-scroll" href="{% url 'core:index' %}#service">Services</a></li>
         <li><a class="page-scroll" href="{% url 'core:index' %}#about">About</a></li>
         <li><a class="page-scroll" href="{% url 'core:index' %}#portfolio">Portfolio</a></li>
-        <li><a class="page-scroll" href="{% url 'core:index' %}#pricing">Pricings</a></li>
-        <li><a class="page-scroll" href="{% url 'blogs:post_list' %}">Blog</a></li>
+        {% comment %} <li><a class="page-scroll" href="{% url 'core:index' %}#pricing">Pricings</a></li> {% endcomment %}
+        <li><a class="page-scroll" href="{% url 'blogs:post_list' %}">Blogs</a></li>
         <li><a class="page-scroll" href="{% url 'core:index' %}#contact">Contact</a></li>
       </ul>
     </div>
@@ -90,7 +91,7 @@
   <!-- Start Side Menu -->
   <div class="side gradient-bg-two">
     <a href="index.html" class="logo-side"
-      ><img src="assets/images/logo-full-light.png" alt="side-logo"
+      ><img src="{% static 'assets/images/logo-full-light.png' %}" alt="side-logo"
     /></a>
     <a href="#" class="close-side"><i class="icofont icofont-close"></i></a>
     <div class="widget mt-120">
@@ -101,9 +102,9 @@
         <li class="link-item">
           <a class="page-scroll" href="{% url 'core:index' %}#feature">Features</a>
         </li>
-        <li class="link-item">
+        {% comment %} <li class="link-item">
           <a class="page-scroll" href="{% url 'core:index' %}#team">Team</a>
-        </li>
+        </li> {% endcomment %}
         <li class="link-item">
           <a class="page-scroll" href="{% url 'core:index' %}#service">Services</a>
         </li>
@@ -113,11 +114,11 @@
         <li class="link-item">
           <a class="page-scroll" href="{% url 'core:index' %}#portfolio">Portfolio</a>
         </li>
-        <li class="link-item">
+        {% comment %} <li class="link-item">
           <a class="page-scroll" href="{% url 'core:index' %}#pricing">Pricings</a>
-        </li>
+        </li> {% endcomment %}
         <li class="link-item">
-          <a class="page-scroll" href="#blog">Blog</a>
+          <a class="page-scroll" href="{% url 'blogs:post_list' %}">Blogs</a>
         </li>
         <li class="link-item">
           <a class="page-scroll" href="{% url 'core:index' %}#contact">Contact</a>
@@ -125,11 +126,12 @@
       </ul>
     </div>
     <ul class="social-media">
-      <li><a href="#" class="icofont icofont-social-facebook"></a></li>
-      <li><a href="#" class="icofont icofont-social-twitter"></a></li>
-      <li><a href="#" class="icofont icofont-social-behance"></a></li>
-      <li><a href="#" class="icofont icofont-social-dribble"></a></li>
-      <li><a href="#" class="icofont icofont-social-linkedin"></a></li>
+      <li><a href="https://www.facebook.com/irmedia.11/" target="_blank" class="icofont icofont-social-facebook"></a></li>
+      <li><a href="https://twitter.com/IRMEDIA11" target="_blank" class="icofont icofont-social-twitter"></a></li>
+      <li><a href="https://www.behance.net/irmediaagency" target="_blank" class="icofont icofont-social-behance"></a></li>
+      <li><a href="https://www.instagram.com/irmedia.11/" target="_blank" class="icofont icofont-social-instagram"></a></li>
+      <li><a href="https://pk.linkedin.com/company/irmedia11" target="_blank" class="icofont icofont-social-linkedin"></a></li>
+      <li><a href="https://www.youtube.com/@IRMedia11" target="_blank" class="icofont icofont-social-youtube"></a></li>
     </ul>
   </div>
   <!-- End Side Menu -->

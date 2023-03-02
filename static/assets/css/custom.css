@@ -1,0 +1,34 @@
+@media (max-width: 400px) {
+  .NotGeneric-SubTitle:first-child,
+  .business-heading {
+    font-size: 18px !important;
+    text-align: center !important;
+    letter-spacing: 1px !important;
+    font-weight: 400 !important;
+  }
+  .home-btn {
+    text-align: center !important;
+    margin: 10px auto !important;
+  }
+
+  .rev_slider a {
+    transition: none !important;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 500px) {
+  .NotGeneric-SubTitle:first-child,
+  .business-heading {
+    font-size: 20px !important;
+    text-align: center !important;
+    letter-spacing: 1px !important;
+    font-weight: 400 !important;
+  }
+  .home-btn {
+    text-align: center !important;
+    margin: 10px auto !important;
+  }
+  .rev_slider a {
+    transition: none !important;
+  }
+}

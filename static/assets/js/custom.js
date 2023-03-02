@@ -40,12 +40,12 @@ $(document).ready(function () {
       success: function (response) {
         if (response.status == "success") {
           swal({
-            title: "Your email was sent successfully!",
+            title: "Your message was sent successfully!",
             icon: "success",
           });
         } else {
           swal({
-            title: "There was a problem sending your email",
+            title: "There was a problem sending your message!",
             icon: "error",
           });
         }

@@ -34,7 +34,8 @@ class ContactForm(forms.Form):
         widget=forms.TextInput({"class": "md-input", "placeholder": "Subject"}),
     )
     project_details = forms.CharField(
-        max_length=255,
+        max_length=5000,
+        required=True,
         widget=forms.Textarea(
             attrs={"class": "md-textarea", "placeholder": "Project Details"}
         ),

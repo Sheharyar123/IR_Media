@@ -1,13 +1,17 @@
-{% autoescape off %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email</title>
+</head>
+<body>
     <h2 class="text-danger">{{ subject }}</h2>
-    <br>
-    <br>
-    <h4>Hello from {{ first_name }} {{ last_name }}</h4>
+    <p>Hello from <strong>{{ first_name }} {{ last_name }}</strong></p>
     <p>{{ project_details }}</p>
-    <br>
-    <br>
-    <strong>For Contact</strong>
-    <p><strong>Email: </strong>{{ email }}</p>
+    <p><strong>For Contact:</strong></p>
     <p><strong>Phone No: </strong>{{ phone_no }}</p>
 
-{% endautoescape %}
+</body>
+</html>

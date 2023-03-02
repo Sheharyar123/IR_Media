@@ -5,7 +5,7 @@
 {% block content %}
 
 
-  <div class="transition-none">
+  <div class="transition-none" style="background-color: #000;">
       <section class="title-hero-bg parallax-effect" style="background: url({% static 'assets/images/title-bg/title-bg-2.jpg' %}) no-repeat center center/cover;">
         <h1 class="raleway-font font-300 text-center pt-20" style="color: #333;">Blog Posts</h1>
       </section>
@@ -18,9 +18,9 @@
           <div class="col-md-6 col-sm-12 col-xs-12 mb-20">
             <div class="post">
               {% if post.img %}
-                <div class="post-img"> <img class="img-responsive" src="{{ post.img.url }}" style="height: 350px !important;" /> </div>
+                <div class="post-img"> <a href="{{ post.get_absolute_url }}"> <img class="img-responsive" src="{{ post.img.url }}" style="height: 350px !important;"  /> </a></div>
               {% else %}
-                <div class="post-img"> <img class="img-responsive" src="{% static 'assets/images/post/post-img-01.jpg' %}" style="height: 350px !important;"/> </div>
+                <div class="post-img"> <a href="{{ post.get_absolute_url }}"> <img class="img-responsive" src="{% static 'assets/images/post/post-img-01.jpg' %}" style="height: 350px !important;"/> </a></div>
               {% endif %}
               <div class="post-info all-padding-40">
                 <h3><a href="{{ post.get_absolute_url }}">{{ post.subject|truncatewords:50|title }}</a></h3>
