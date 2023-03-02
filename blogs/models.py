@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 from ckeditor.fields import RichTextField
+from cloudinary.models import CloudinaryField
 
 User = get_user_model()
 
@@ -23,7 +24,7 @@ class Post(models.Model):
     body = RichTextField()
     is_active = models.BooleanField(default=True)
     tags = models.ManyToManyField(Tag, blank=True)
-    img = models.ImageField(null=True, blank=True, upload_to="blogs")
+    img = CloudinaryField(null=True, blank=True)
     created_date = models.DateField(auto_now_add=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)

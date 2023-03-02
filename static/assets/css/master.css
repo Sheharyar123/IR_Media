@@ -537,7 +537,6 @@ input[type="color"]:focus,
 .select-custom {
   width: 100%;
   overflow: hidden;
-  background: url(../images/select-arrow.png) no-repeat 97% 50%;
   border: 1px solid #fff;
   margin-bottom: 20px;
 }
@@ -2001,18 +2000,6 @@ input.search-bar-top:-moz-placeholder {
 }
 .bordered-bg.white-bg {
   background-color: #fff;
-}
-.pattern-bg-dark {
-  background-image: url(../images/background/pattern-bg-dark.jpg);
-  background-repeat: repeat;
-}
-.pattern-bg-light {
-  background-image: url(../images/light-pattern.png);
-  background-repeat: repeat;
-}
-.pattern-bg-colored {
-  background-image: url(../images/colored-pattern.png);
-  background-repeat: repeat;
 }
 .light-br-r {
   border-right: 1px solid #eeeeee;
@@ -8126,7 +8113,6 @@ section.dark-block .default-slider .slick-dots li button {
   top: 0;
   left: 0;
   content: "";
-  background: url(../images/slide-shape.png) no-repeat;
   width: 590px;
   height: 590px;
   z-index: -1;

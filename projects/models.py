@@ -2,6 +2,7 @@ import uuid
 from django.db import models
 from django.urls import reverse
 from ckeditor.fields import RichTextField
+from cloudinary.models import CloudinaryField
 
 
 class Category(models.Model):
@@ -20,7 +21,7 @@ class Project(models.Model):
     title = models.CharField(max_length=255)
     description = RichTextField(blank=True)
     categories = models.ManyToManyField(Category, blank=True)
-    img = models.ImageField(upload_to="projects", null=True, blank=True)
+    img = CloudinaryField(null=True, blank=True)
     is_active = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
