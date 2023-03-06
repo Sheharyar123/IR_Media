@@ -43,9 +43,9 @@
                     <div class="col-md-4 col-sm-12 col-xs-12 mb-20">
                       <div class="post">
                         {% if post.img %}
-                          <div class="post-img"> <img class="img-responsive" src="{{ post.img.url }}" style="height: 350px !important;" /> </div>
+                          <div class="post-img"> <a href="{{ post.get_absolute_url }}"><img class="img-responsive" src="{{ post.img.url }}" style="height: 250px !important;" /> </a></div>
                         {% else %}
-                          <div class="post-img"> <img class="img-responsive" src="{% static 'assets/images/post/post-img-01.jpg' %}" style="height: 350px !important;"/> </div>
+                          <div class="post-img"> <a href="{{ post.get_absolute_url }}"><img class="img-responsive" src="{% static 'assets/images/post/post-img-01.jpg' %}" style="height: 250px !important;"/> </a></div>
                         {% endif %}
                         <div class="post-info all-padding-20">
                           <h3><a href="{{ post.get_absolute_url }}">{{ post.subject|truncatewords:50|title }}</a></h3>

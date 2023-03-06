@@ -15,12 +15,12 @@
     <div class="container">
       <div class="row blog-style-01">
         {% for post in post_list %}
-          <div class="col-md-6 col-sm-12 col-xs-12 mb-20">
+          <div class="col-md-4 col-sm-12 col-xs-12 mb-20">
             <div class="post">
               {% if post.img %}
-                <div class="post-img"> <a href="{{ post.get_absolute_url }}"> <img class="img-responsive" src="{{ post.img.url }}" style="height: 350px !important;"  /> </a></div>
+                <div class="post-img"> <a href="{{ post.get_absolute_url }}"> <img class="img-responsive" src="{{ post.img.url }}" style="height: 250px !important;"  /> </a></div>
               {% else %}
-                <div class="post-img"> <a href="{{ post.get_absolute_url }}"> <img class="img-responsive" src="{% static 'assets/images/post/post-img-01.jpg' %}" style="height: 350px !important;"/> </a></div>
+                <div class="post-img"> <a href="{{ post.get_absolute_url }}"> <img class="img-responsive" src="{% static 'assets/images/post/post-img-01.jpg' %}" style="height: 250px !important;"/> </a></div>
               {% endif %}
               <div class="post-info all-padding-40">
                 <h3><a href="{{ post.get_absolute_url }}">{{ post.subject|truncatewords:50|title }}</a></h3>
