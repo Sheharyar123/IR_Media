@@ -20,7 +20,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "irmedia.fly.dev"]
 
 
 # Application definition
@@ -78,10 +78,7 @@ WSGI_APPLICATION = "ir_media.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    "default": env.dj_db_url("DATABASE_URL", default="sqlite:///db.sqlite3"),
 }
 
 
@@ -135,7 +132,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Custom User Model
 AUTH_USER_MODEL = "accounts.User"
-
+ACCOUNT_EMAIL_SUBJECT_PREFIX = "[irmedia] "
 # SMTP SETTINGS
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
@@ -161,3 +158,7 @@ cloudinary.config(
     api_key=env.str("CLOUDINARY_API_KEY"),
     api_secret=env.str("CLOUDINARY_API_SECRET"),
 )
+
+
+# CSRF Settings
+CSRF_TRUSTED_ORIGINS = ["https://irmedia.fly.dev/", "http://irmedia.fly.dev/"]

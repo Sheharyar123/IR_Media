@@ -1,5 +1,5 @@
-import uuid
 from django.db import models
+from django.template.defaultfilters import slugify
 from django.urls import reverse
 from ckeditor.fields import RichTextField
 from cloudinary.models import CloudinaryField
@@ -17,8 +17,8 @@ class Category(models.Model):
 
 
 class Project(models.Model):
-    id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
     title = models.CharField(max_length=255)
+    slug = models.SlugField()
     description = RichTextField(blank=True)
     categories = models.ManyToManyField(Category, blank=True)
     img = CloudinaryField(null=True, blank=True)
@@ -30,8 +30,13 @@ class Project(models.Model):
         indexes = [models.Index(fields=["id", "-updated_on", "-created_on"])]
         ordering = ["-updated_on", "-created_on"]
 
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = slugify(self.title)
+        super(Project, self).save(*args, **kwargs)
+
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("projects:project_detail", kwargs={"pk": self.pk})
+        return reverse("projects:project_detail", kwargs={"slug": self.slug})

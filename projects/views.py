@@ -9,5 +9,7 @@ class ProjectDetailView(DetailView):
     context_object_name = "project"
 
     def get_object(self):
-        queryset = get_object_or_404(Project, id=self.kwargs.get("pk"), is_active=True)
+        queryset = get_object_or_404(
+            Project, slug=self.kwargs.get("slug"), is_active=True
+        )
         return queryset

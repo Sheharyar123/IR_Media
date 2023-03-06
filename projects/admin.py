@@ -4,6 +4,7 @@ from .models import Project, Category
 
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ["title", "is_active"]
+    prepopulated_fields = {"slug": ("title",)}
     list_editable = [
         "is_active",
     ]
