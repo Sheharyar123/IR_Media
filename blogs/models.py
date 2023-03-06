@@ -21,7 +21,7 @@ class Post(models.Model):
         User, on_delete=models.SET_NULL, null=True, related_name="posts"
     )
     slug = models.SlugField()
-    subject = models.CharField(max_length=255)
+    subject = models.CharField(max_length=1000)
     body = RichTextField()
     is_active = models.BooleanField(default=True)
     tags = models.ManyToManyField(Tag, blank=True)
@@ -35,7 +35,7 @@ class Post(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.id:
-            self.slug = slugify(self.subject)
+            self.slug = slugify(self.subject[:300])
         super(Post, self).save(*args, **kwargs)
 
     def __str__(self):
