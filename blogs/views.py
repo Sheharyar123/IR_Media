@@ -19,7 +19,7 @@ class PostDetailView(DetailView):
     context_object_name = "post"
 
     def get_object(self):
-        queryset = get_object_or_404(Post, id=self.kwargs.get("slug"), is_active=True)
+        queryset = get_object_or_404(Post, slug=self.kwargs.get("slug"), is_active=True)
         return queryset
 
     def get_context_data(self, **kwargs):

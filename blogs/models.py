@@ -20,7 +20,7 @@ class Post(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True, related_name="posts"
     )
-    slug = models.SlugField()
+    slug = models.SlugField(max_length=300)
     subject = models.CharField(max_length=1000)
     body = RichTextField()
     is_active = models.BooleanField(default=True)
