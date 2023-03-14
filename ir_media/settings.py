@@ -165,5 +165,5 @@ CSRF_TRUSTED_ORIGINS = [
     "https://irmedia.fly.dev/",
     "http://irmedia.fly.dev/",
     "https://irmedia.org/",
-    "http://irmedia.fly.dev/",
+    "http://irmedia.org/",
 ]
