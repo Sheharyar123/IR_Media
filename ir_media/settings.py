@@ -20,7 +20,7 @@ SECRET_KEY = env.str("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "irmedia.fly.dev"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "irmedia.fly.dev", "irmedia.org"]
 
 
 # Application definition
@@ -161,4 +161,9 @@ cloudinary.config(
 
 
 # CSRF Settings
-CSRF_TRUSTED_ORIGINS = ["https://irmedia.fly.dev/", "http://irmedia.fly.dev/"]
+CSRF_TRUSTED_ORIGINS = [
+    "https://irmedia.fly.dev/",
+    "http://irmedia.fly.dev/",
+    "https://irmedia.org/",
+    "http://irmedia.fly.dev/",
+]

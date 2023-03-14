@@ -49,7 +49,7 @@ $(document).ready(function () {
             icon: "error",
           });
         }
-        $("#contact-form")[0].reset();
+        $("#contact-form-new")[0].reset();
       },
     });
   });
