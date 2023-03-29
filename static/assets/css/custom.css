@@ -1,3 +1,15 @@
+.talent-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.talent-text p {
+  font-size: 20px !important;
+  line-height: 1.5;
+}
+
 @media (max-width: 400px) {
   .NotGeneric-SubTitle:first-child,
   .business-heading {
