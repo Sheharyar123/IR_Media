@@ -1,13 +1,33 @@
 .talent-text {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .talent-text p {
-  font-size: 20px !important;
+  font-size: 20px;
   line-height: 1.5;
+}
+
+.talent-text h1 {
+  font-weight: 500 !important;
+}
+
+@media (max-width: 700px) {
+  .talent-text h1 {
+    font-size: 30px !important;
+  }
+
+  .talent-text p {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 400px) {
