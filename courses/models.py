@@ -21,7 +21,7 @@ class Student(models.Model):
 class Course(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField()
-    instructors = models.ManyToManyField(Instructor, null=True, blank=True)
+    instructors = models.ManyToManyField(Instructor, blank=True, related_name="courses")
     students = models.ManyToManyField("Student", blank=True, related_name="courses")
     image = models.ImageField(upload_to="courses/course_images", null=True, blank=True)
     category = models.CharField(max_length=255, null=True, blank=True)

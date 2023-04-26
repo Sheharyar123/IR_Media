@@ -45,7 +45,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     objects = UserManager()
-    REQUIRED_FIELDS = ["first_name", "last_name", "phone_no"]
+    REQUIRED_FIELDS = ["name", "phone_no"]
     USERNAME_FIELD = "email"
 
     class Meta:

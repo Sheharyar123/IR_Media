@@ -1,3 +1,14 @@
 from django.contrib import admin
+from .models import Instructor, Course, Student
 
-# Register your models here.
+
+class CourseAdmin(admin.ModelAdmin):
+    list_display = ["title", "price", "category", "duration", "is_active"]
+    prepopulated_fields = {"slug": ("title",)}
+    list_editable = ["is_active"]
+    search_fields = ["title", "category"]
+
+
+admin.site.register(Instructor)
+admin.site.register(Course, CourseAdmin)
+admin.site.register(Student)
