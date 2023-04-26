@@ -9,24 +9,22 @@ from django.contrib.auth.models import (
 class UserManager(BaseUserManager):
     """Custom User Manager for User Model"""
 
-    def create_user(self, email, first_name, last_name, phone_no, password=None):
+    def create_user(self, email, name, phone_no, password=None):
         """Create, save and return a new user"""
         user = self.model(
             email=self.normalize_email(email),
-            first_name=first_name,
-            last_name=last_name,
+            name=name,
             phone_no=phone_no,
         )
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, first_name, last_name, phone_no, password):
+    def create_superuser(self, email, name, phone_no, password):
         """Create, save and return a new super user"""
         user = self.create_user(
             email=email,
-            first_name=first_name,
-            last_name=last_name,
+            name=name,
             phone_no=phone_no,
             password=password,
         )
@@ -40,8 +38,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     """Defines custom user model"""
 
     email = models.EmailField(max_length=255, unique=True)
-    first_name = models.CharField(max_length=255)
-    last_name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
     phone_no = models.CharField(max_length=50)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)

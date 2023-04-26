@@ -9,11 +9,10 @@ User = get_user_model()
 
 
 class UserAdmin(BaseUserAdmin):
-    list_filter = ("first_name", "last_name")
+    list_filter = ("name",)
     list_display = (
         "email",
-        "first_name",
-        "last_name",
+        "name",
         "phone_no",
         "created_on",
         "is_active",
@@ -23,7 +22,7 @@ class UserAdmin(BaseUserAdmin):
         (None, {"fields": ("email", "password")}),
         (
             _("Personal Details"),
-            {"fields": ("first_name", "last_name", "phone_no")},
+            {"fields": ("name", "phone_no")},
         ),
         (_("Permissions"), {"fields": ("is_active", "is_staff", "is_superuser")}),
         (_("Important Dates"), {"fields": ("last_login", "created_on", "updated_on")}),
@@ -37,8 +36,7 @@ class UserAdmin(BaseUserAdmin):
                     "email",
                     "password1",
                     "password2",
-                    "first_name",
-                    "last_name",
+                    "name",
                     "phone_no",
                     "is_active",
                     "is_staff",
