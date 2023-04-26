@@ -82,7 +82,7 @@
         <li><a class="page-scroll" href="{% url 'core:index' %}#portfolio">Portfolio</a></li>
         {% comment %} <li><a class="page-scroll" href="{% url 'core:index' %}#pricing">Pricings</a></li> {% endcomment %}
         <li><a class="page-scroll" href="{% url 'blogs:post_list' %}">Blogs</a></li>
-        <li><a class="page-scroll" href="#">Courses</a></li>
+        <li><a class="page-scroll" href="{% url 'courses:course_list' %}">Courses</a></li>
         <li><a class="page-scroll" href="{% url 'core:index' %}#contact">Contact</a></li>
       </ul>
     </div>
@@ -122,7 +122,7 @@
           <a class="page-scroll" href="{% url 'blogs:post_list' %}">Blogs</a>
         </li>
         <li class="link-item">
-          <a class="page-scroll" href="#">Courses</a>
+          <a class="page-scroll" href="{% url 'courses:course_list' %}">Courses</a>
         </li>
         <li class="link-item">
           <a class="page-scroll" href="{% url 'core:index' %}#contact">Contact</a>

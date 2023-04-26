@@ -1,0 +1,71 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}IR Media | Courses{% endblock title %}
+{% block content %}
+
+
+  <div class="transition-none" style="background-color: #000;">
+      <section class="title-hero-bg parallax-effect" style="background: url({% static 'assets/images/title-bg/title-bg-2.jpg' %}) no-repeat center center/cover;">
+        <h1 class="raleway-font font-300 text-center pt-20" style="color: #333;">Courses</h1>
+      </section>
+  </div>
+
+  <section class="white-bg pt-30">
+    <div class="container">
+      <div class="row blog-style-01">
+        {% for course in course_list %}
+          <div class="col-md-4 col-sm-12 col-xs-12 mb-20">
+            <div class="course">
+                <div>
+                  <a href="#"> <img class="img-responsive" src="{{ course.imageURL}}" style="width: 100% !important"  /> </a>
+                </div>
+                <div class="text pt-4">
+                  <p class="meta d-flex mt-10">
+                  <span><i class="fa-solid fa-user" style="margin-right: 5px; color: #502d5a;"></i>{{ course.instructors.all|join:', '}}</span>
+                  <span style="float: right; color: #502d5a;"><i class="fa-solid fa-calendar-days mr-2" style="margin-right: 5px"></i>{{ course.duration }}</span>
+                  </p>
+                  <h3><a href="#" class="course-title">{{ course.title }}</a></h3>
+                  <p>{{ course.description|truncatewords:50 }}</p>
+                  <p><a href="#" class="btn btn-lg btn-gradient-secondary btn-square">Apply now</a></p>
+                </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      {% if is_paginated %}
+        <div class="row mt-100">
+            <div class="col-md-12">
+                <div class="text-center">
+                  <div class="pagination text-uppercase dark-color">
+                        <ul>
+                          {% if page_obj.has_previous %}
+                          <li><a href="?page={{ page_obj.previous_page_number }}" class="btn">&#10094; Prev</a></li>
+                          {% else %}
+                          <li><a href="#" class="btn btn--disabled">&#10094; Prev</a></li>
+                        {% endif %}
+    
+                        {% for i in page_obj.paginator.page_range %}
+                            {% if i == page_obj.number %}
+                                <li><a href="?page={{ i }}" class="btn btn--sub">{{ i }}</a></li>
+                            {% else %}
+                                <li><a href="?page={{ i }}" class="btn">{{ i }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        
+                        {% if page_obj.has_next %}
+                            <li><a href="?page={{ page_obj.next_page_number }}" class="btn">Next &#10095;</a></li>
+                        {% else %}
+                            <li><a href="#" class="btn btn--disabled">Next &#10095;</a></li>
+                        {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+
+{% endblock content %}

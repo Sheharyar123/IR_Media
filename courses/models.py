@@ -34,3 +34,10 @@ class Course(models.Model):
 
     def __str__(self):
         return self.title
+
+    @property
+    def imageURL(self):
+        if not self.image.url:
+            return ""
+        else:
+            return self.image.url

@@ -20,6 +20,10 @@
   font-weight: 500 !important;
 }
 
+.course-title:hover {
+  color: #212121 !important;
+}
+
 @media (max-width: 700px) {
   .talent-text h1 {
     font-size: 30px !important;
