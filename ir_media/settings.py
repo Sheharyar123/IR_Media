@@ -33,14 +33,19 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "whitenoise.runserver_nostatic",  # new
     "django.contrib.staticfiles",
+    "django.contrib.sites",
+    # Third Party
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
+    "ckeditor",
     # Local
     "core.apps.CoreConfig",
     "accounts.apps.AccountsConfig",
     "blogs.apps.BlogsConfig",
     "projects.apps.ProjectsConfig",
     "courses.apps.CoursesConfig",
-    # Third Party
-    "ckeditor",
 ]
 
 MIDDLEWARE = [
@@ -133,7 +138,60 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Custom User Model
 AUTH_USER_MODEL = "accounts.User"
+
+# Django Allauth
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+
+SITE_ID = 2
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+LOGIN_REDIRECT_URL = "index"
+ACCOUNT_LOGOUT_REDIRECT = "index"
+ACCOUNT_LOGOUT_ON_GET = True
+SOCIALACCOUNT_LOGIN_ON_GET = True
+SOCIALACCOUNT_AUTO_SIGNUP = True
+SOCIALACCOUNT_EMAIL_VERIFICATION = "none"
 ACCOUNT_EMAIL_SUBJECT_PREFIX = "[irmedia] "
+
+# Custom Django Allauth Forms
+ACCOUNT_FORMS = {
+    "login": "accounts.forms.CustomLoginForm",
+    "signup": "accounts.forms.CustomSignupForm",
+}
+# Social Accounts
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "SCOPE": [
+            "profile",
+            "email",
+        ],
+        "AUTH_PARAMS": {
+            "access_type": "online",
+        },
+        "OAUTH_PKCE_ENABLED": True,
+    },
+    "microsoft": {
+        "SCOPE": ["User.Read"],
+        "AUTH_PARAMS": {
+            "prompt": "select_account",
+        },
+        "METHOD": "oauth2",
+        "LOCALE_FUNC": lambda request: "en_US",
+        "USER_FIELDS": [
+            "email",
+            "first_name",
+            "last_name",
+        ],
+    },
+}
 # SMTP SETTINGS
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
@@ -168,3 +226,10 @@ CSRF_TRUSTED_ORIGINS = [
     "https://irmedia.org/",
     "http://irmedia.org/",
 ]
+
+# Change error message tag to danger
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.ERROR: "danger",
+}

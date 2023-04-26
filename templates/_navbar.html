@@ -84,6 +84,12 @@
         <li><a class="page-scroll" href="{% url 'blogs:post_list' %}">Blogs</a></li>
         <li><a class="page-scroll" href="{% url 'courses:course_list' %}">Courses</a></li>
         <li><a class="page-scroll" href="{% url 'core:index' %}#contact">Contact</a></li>
+        {% if request.user.is_authenticated %}
+        <li><a class="page-scroll" href="{% url 'account_logout' %}">Logout</a></li>
+        {% else %}
+        <li><a class="page-scroll" href="{% url 'account_login' %}">Login</a></li>
+        <li><a class="page-scroll" href="{% url 'account_signup' %}">Sign Up</a></li>
+        {% endif %}
       </ul>
     </div>
     <!--== /.navbar-collapse ==-->
@@ -127,6 +133,12 @@
         <li class="link-item">
           <a class="page-scroll" href="{% url 'core:index' %}#contact">Contact</a>
         </li>
+        {% if request.user.is_authenticated %}
+        <li class="link-item"><a class="page-scroll" href="{% url 'account_logout' %}">Logout</a></li>
+        {% else %}
+        <li class="link-item"><a class="page-scroll" href="{% url 'account_login' %}">Login</a></li>
+        <li class="link-item"><a class="page-scroll" href="{% url 'account_signup' %}">Sign Up</a></li>
+        {% endif %}
       </ul>
     </div>
     <ul class="social-media">
