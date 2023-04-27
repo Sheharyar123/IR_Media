@@ -51,6 +51,39 @@
   background-color: #502d5a;
 }
 
+.form-error {
+  color: #dc4c64;
+  line-height: 1.5;
+}
+
+@keyframes show-toast {
+  0% {
+    bottom: -100%;
+  }
+  20% {
+    bottom: 100px;
+  }
+  80% {
+    bottom: 100px;
+  }
+  100% {
+    bottom: -100%;
+  }
+}
+
+.show-notification {
+  position: fixed;
+  bottom: 100%;
+  right: 20px;
+  animation-name: show-toast;
+  animation-duration: 8s;
+  z-index: 99;
+}
+
+.show-notification strong {
+  padding-right: 5px;
+}
+
 @media (max-width: 700px) {
   .talent-text h1 {
     font-size: 30px !important;
