@@ -50,16 +50,16 @@ nav.navbar.bootsnav {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-nav.navbar.bootsnav::after {
+/* nav.navbar.bootsnav::after {
   content: "";
   position: absolute;
   width: 100%;
   top: 0;
   left: 0;
-  height: 80px;
+  height: 58px;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: -1;
-}
+} */
 nav.navbar.bootsnav.navbar-gradient {
   background: rgba(79, 172, 254, 1);
   background: -moz-linear-gradient(13deg, rgb(2 2 2) 0%, rgb(80 45 90) 100%);
@@ -907,7 +907,6 @@ body.on-side .wrap-sticky nav.navbar.bootsnav.sticked {
 
   nav.navbar.bootsnav.navbar-transparent.white,
   nav.navbar.bootsnav.navbar-transparent.dark {
-    background: transparent;
     height: 80px;
     box-shadow: none;
   }
