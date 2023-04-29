@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "blogs.apps.BlogsConfig",
     "projects.apps.ProjectsConfig",
     "courses.apps.CoursesConfig",
+    "payments.apps.PaymentsConfig",
 ]
 
 MIDDLEWARE = [
