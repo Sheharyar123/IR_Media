@@ -23,14 +23,14 @@
           <div class="col-md-4 col-sm-12 col-xs-12 mb-20">
             <div class="course">
                 <div>
-                  <a href="#"> <img class="img-responsive" src="{{ course.imageURL}}" style="width: 100% !important"  /> </a>
+                  <a href="{{ course.get_absolute_url }}"> <img class="img-responsive" src="{{ course.imageURL}}" style="width: 100% !important"  /> </a>
                 </div>
                 <div class="text pt-4">
                   <p class="meta d-flex mt-10">
                   <span><i class="fa-solid fa-user" style="margin-right: 5px; color: #502d5a;"></i>{{ course.instructors.all|join:', '}}</span>
                   <span style="float: right; color: #502d5a;"><i class="fa-solid fa-calendar-days mr-2" style="margin-right: 5px"></i>{{ course.duration }}</span>
                   </p>
-                  <h3><a href="#" class="course-title">{{ course.title }}</a></h3>
+                  <h3><a href="{{ course.get_absolute_url }}" class="course-title">{{ course.title }}</a></h3>
                   <p>{{ course.description|truncatewords:50 }}</p>
                   <p><a href="{{ course.get_absolute_url }}" class="btn btn-lg btn-gradient-secondary btn-square">See Details</a></p>
                 </div>

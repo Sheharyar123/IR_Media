@@ -1,9 +1,6 @@
 {% extends '_base.html' %}
 {% load static %}
 {% block title %}{{ course.title }}{% endblock title %}
-{% block extra %}
-    <link href="{% static 'assets/css/style2.css' %}"  rel="stylesheet" type="text/css"/>
-{% endblock extra %}
 {% block content %}
 
     <!--================ Start Course Details Area =================-->
@@ -59,7 +56,8 @@
 
 
                 <div class="col-lg-4 right-contents">
-                    <ul>
+                    <span class='button'>Watch Preview</span>
+                    <ul style="margin-top: 10px">
                         <li>
                             <a class="justify-content-between d-flex" href="#">
                                 <p>Trainer’s Name</p>
@@ -208,5 +206,11 @@
         </div>
     </section>
     <!--================ End Course Details Area =================-->
+
+    <div class='video-wrapper'>
+        <div class='video'>
+            <iframe id="player" width="560" height="315" src="https://www.youtube.com/embed/MFJq4goFNtQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
 
 {% endblock content %}
