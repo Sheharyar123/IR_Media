@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.urls import reverse
+from django.template.defaultfilters import slugify
+from ckeditor.fields import RichTextField
 
 User = get_user_model()
 
@@ -25,6 +28,8 @@ class Course(models.Model):
     students = models.ManyToManyField("Student", blank=True, related_name="courses")
     image = models.ImageField(upload_to="courses/course_images", null=True, blank=True)
     category = models.CharField(max_length=255, null=True, blank=True)
+    language = models.CharField(max_length=255, null=True, blank=True)
+    outline = RichTextField(blank=True)
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=8, decimal_places=2)
     duration = models.CharField(max_length=50, null=True, blank=True)
@@ -34,6 +39,11 @@ class Course(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse(
+            "courses:course_detail", kwargs={"course_slug": slugify(self.slug)}
+        )
 
     @property
     def imageURL(self):

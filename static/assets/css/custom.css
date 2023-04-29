@@ -84,6 +84,16 @@
   padding-right: 5px;
 }
 
+.right-contents li a,
+.reviews {
+  display: flex !important;
+  justify-content: space-between !important;
+}
+
+.course-title {
+  color: #222;
+}
+
 @media (max-width: 700px) {
   .talent-text h1 {
     font-size: 30px !important;

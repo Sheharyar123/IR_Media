@@ -41,6 +41,7 @@
       type="text/css"
       href="{% static 'assets/css/custom.css' %}"
     />
+    {% block extra %}{% endblock extra %}
   </head>
   <body>
     {% include '_alerts.html' %}
