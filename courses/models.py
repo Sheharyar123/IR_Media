@@ -55,7 +55,7 @@ class Course(models.Model):
             return self.image.url
 
 
-class UserCourse(models.Model):
+class Enrollment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     purchase_date = models.DateTimeField(auto_now_add=True)
@@ -65,3 +65,13 @@ class UserCourse(models.Model):
 
     def __str__(self):
         return f"{self.user.name} - {self.course.title}"
+
+
+class CourseContent(models.Model):
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    video_url = models.FileField(upload_to="course_videos", null=True, blank=True)
+    order = models.IntegerField()
+
+    class Meta:
+        ordering = ["order"]

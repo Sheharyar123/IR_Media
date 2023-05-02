@@ -3,8 +3,8 @@ from .models import Payment
 
 
 class PaymentAdmin(admin.ModelAdmin):
-    list_display = ["user", "amount", "stripe_payment_id"]
-    readonly_fields = ["amount", "user", "user_course", "stripe_payment_id"]
+    list_display = ["user", "amount", "stripe_payment_id", "status"]
+    readonly_fields = ["amount", "user", "user_course", "stripe_payment_id", "status"]
     search_fields = ["amount"]
 
 

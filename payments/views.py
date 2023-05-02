@@ -30,7 +30,8 @@ class PaymentView(LoginRequiredMixin, View):
                 "success_url": success_url,
                 "cancel_url": cancel_url,
                 "line_items": [],
-                # "customer_email": subscription.email,
+                "customer_email": request.user.email,
+                # "user": request.user,
             }
 
             session_data["line_items"].append(
@@ -56,6 +57,6 @@ class PaymentCompletedView(LoginRequiredMixin, View):
         return render(request, "payments/payment_completed.html")
 
 
-class PaymentCanceledView(View):
+class PaymentCanceledView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         return render(request, "payments/payment_canceled.html")
