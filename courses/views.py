@@ -1,8 +1,7 @@
-from typing import Any, Optional
-from django.db import models
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, render
-from django.views.generic import ListView, DetailView
-from .models import Course
+from django.views.generic import ListView, DetailView, View
+from .models import Course, Enrollment
 
 
 class CourseListView(ListView):
@@ -25,3 +24,16 @@ class CourseDetailView(DetailView):
             Course, slug=self.kwargs.get("course_slug"), is_active=True
         )
         return course
+
+
+class CourseContentView(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        course = get_object_or_404(Course, slug=self.kwargs.get("course_slug"))
+        enrollment = Enrollment.objects.filter(
+            user=request.user, course=course
+        ).exists()
+        if enrollment:
+            context = {"course": course}
+            return render(request, "courses/course_content.html", context)
+        else:
+            return render(request, "courses/course_not_enrolled.html")

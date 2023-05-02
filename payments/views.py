@@ -16,14 +16,14 @@ stripe.api_version = settings.STRIPE_API_VERSION
 class PaymentView(LoginRequiredMixin, View):
     def post(self, request, *args, **kwargs):
         try:
+            course_id = kwargs.get("course_id")
+            course = get_object_or_404(Course, id=course_id, is_active=True)
             success_url = request.build_absolute_uri(
-                reverse("payments:payment_completed")
+                reverse("courses:course_content", kwargs={"course_slug": course.slug})
             )
             cancel_url = request.build_absolute_uri(
                 reverse("payments:payment_canceled")
             )
-            course_id = kwargs.get("course_id")
-            course = get_object_or_404(Course, id=course_id, is_active=True)
             session_data = {
                 "mode": "payment",
                 "client_reference_id": course_id,
@@ -52,9 +52,9 @@ class PaymentView(LoginRequiredMixin, View):
             return redirect("courses:course_list")
 
 
-class PaymentCompletedView(LoginRequiredMixin, View):
-    def get(self, request, *args, **kwargs):
-        return render(request, "payments/payment_completed.html")
+# class PaymentCompletedView(LoginRequiredMixin, View):
+#     def get(self, request, *args, **kwargs):
+#         return render(request, "payments/payment_completed.html")
 
 
 class PaymentCanceledView(LoginRequiredMixin, View):
