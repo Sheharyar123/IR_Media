@@ -234,3 +234,8 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: "danger",
 }
+
+# Stripe Settings
+STRIPE_PUBLISHABLE_KEY = env.str("STRIPE_PUBLISHABLE_KEY")
+STRIPE_SECRET_KEY = env.str("STRIPE_SECRET_KEY")
+STRIPE_API_VERSION = env.str("STRIPE_API_VERSION")

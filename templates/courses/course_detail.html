@@ -77,8 +77,10 @@
                             </a>
                         </li>
                     </ul>
-                    <a href="#" class="primary-btn2 text-uppercase enroll rounded-0 text-white">Enroll the course</a>
-
+                    <form method="POST" action="{% url 'payments:check_payment' course.id %}" >
+                        {% csrf_token %}
+                        <input type="submit" class="primary-btn2 text-uppercase enroll rounded-0 text-white" value="Enroll the course" />
+                    </form>    
                     {% comment %} <h4 class="title">Reviews</h4>
                     <div class="content">
                         <div class="review-top row pt-40">
@@ -209,7 +211,7 @@
 
     <div class='video-wrapper'>
         <div class='video'>
-            <iframe id="player" width="560" height="315" src="https://www.youtube.com/embed/MFJq4goFNtQ" frameborder="0" allowfullscreen></iframe>
+            <iframe id="player" width="560" height="315" src="https://www.youtube.com/embed/1MjMvFRrNa4" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
 
