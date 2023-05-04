@@ -45,10 +45,9 @@
                         <h4 class="title">Course Outline</h4>
                         <div class="content">
                             <ul class="course_list">
-                                {% comment %} <li class="justify-content-between d-flex">
-                                    <p>Introduction Lesson</p>
-                                </li> {% endcomment %}
-                                {{ course.outline|safe }}
+                               {% for content in course_content %}
+                               <li>{{ content.title }}</li>
+                               {% endfor %}
                             </ul>
                         </div>
                     </div>
@@ -77,10 +76,19 @@
                             </a>
                         </li>
                     </ul>
-                    <form method="POST" action="{% url 'payments:check_payment' course.id %}" >
-                        {% csrf_token %}
-                        <input type="submit" class="primary-btn2 text-uppercase enroll rounded-0 text-white" value="Enroll the course" />
-                    </form>    
+                    {% if request.user.is_authenticated %}
+                        {% if not enrolled %}
+                        <form method="POST" action="{% url 'payments:check_payment' course.id %}" >
+                            {% csrf_token %}
+                            <input type="submit" class="primary-btn2 text-uppercase enroll rounded-0 text-white" value="Enroll in the course" />
+                        </form>
+                        {% else %}
+                        <a href="{% url 'courses:course_content' course.slug %}" class="primary-btn2 text-uppercase enroll rounded-0 text-white">Go to the course</a>
+                        {% endif %}
+                    {% else %}
+                        <a href="{% url 'account_login' %}?next={{ request.path }}" class="primary-btn2 text-uppercase enroll rounded-0 text-white">Enroll in the course</a>
+                    {% endif %}
+
                     {% comment %} <h4 class="title">Reviews</h4>
                     <div class="content">
                         <div class="review-top row pt-40">

@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
-    "ckeditor",
     # Local
     "core.apps.CoreConfig",
     "accounts.apps.AccountsConfig",
@@ -154,7 +153,7 @@ ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
-LOGIN_REDIRECT_URL = "core:index"
+LOGIN_REDIRECT_URL = "/"
 ACCOUNT_LOGOUT_REDIRECT = "core:index"
 ACCOUNT_LOGOUT_ON_GET = True
 SOCIALACCOUNT_LOGIN_ON_GET = True

@@ -1,1 +1,14 @@
-<h1>You didn't purchase the course</h1>
+{% extends '_base.html' %}
+
+{% block title %}{{ course.title }} | Not Enrolled{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mt-100">
+            <div class="col-sm-12 col-md-12">
+                <h3>Sorry! You didn't purchase the course. <a href="{{ course.get_absolute_url }}">Buy it first</a> to view the course content!</h1>
+            </div>
+        </div>      
+    </div>  
+
+{% endblock content %}

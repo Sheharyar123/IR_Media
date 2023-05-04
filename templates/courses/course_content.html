@@ -1,1 +1,48 @@
-<h1>{{ course.title }}</h1>
+{% extends '_base.html' %}
+
+{% block title %}{{ course.title }} | Content{% endblock title %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row mt-80 mb-50">
+        <div class="col-md-12 col-sm-12">
+            <h1 class="text-center mb-20">{{ course.title }}</h1>
+        </div>
+        <div class="col-md-7 col-sm-12">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe src="{{ content1.video_url }}" width="640" height="480" allow="autoplay" class="embed-responsive-item"></iframe>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="list-group">
+                {% for outline in course_content %}
+                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-video-url="{{ outline.video_url }}" id="outline-item-{{forloop.counter}}">
+                    <strong>Lesson {{ forloop.counter }}: </strong>{{ outline.title }}
+                    {% comment %} <span class="badge bg-success">Completed</span> {% endcomment %}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const contentItems = document.querySelectorAll(".list-group-item");
+      
+        contentItems.forEach(function (item) {
+          item.addEventListener("click", function (e) {
+            e.preventDefault();
+            const videoUrl = event.target.getAttribute('data-video-url');
+            const videoPlayer = document.querySelector('.embed-responsive-item');
+
+            if (videoUrl) {
+                videoPlayer.setAttribute('src', videoUrl);
+            }
+          });
+        });
+      });
+</script>
+
+{% endblock content %}

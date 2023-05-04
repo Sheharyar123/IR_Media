@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Instructor, Course, Student, Enrollment
+from .models import Instructor, Course, Student, Enrollment, CourseContent
 
 
 class EnrollmentAdmin(admin.TabularInline):
@@ -8,9 +8,13 @@ class EnrollmentAdmin(admin.TabularInline):
     extra = 0
 
 
+class CourseContentAdmin(admin.StackedInline):
+    model = CourseContent
+
+
 class CourseAdmin(admin.ModelAdmin):
     list_display = ["title", "price", "category", "duration", "language", "is_active"]
-    inlines = [EnrollmentAdmin]
+    inlines = [EnrollmentAdmin, CourseContentAdmin]
     prepopulated_fields = {"slug": ("title",)}
     list_editable = ["is_active"]
     search_fields = ["title", "category"]

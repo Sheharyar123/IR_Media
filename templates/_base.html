@@ -49,8 +49,9 @@
     <div class="wrapper">
       {% include '_navbar.html' %}
       {% block content %}{% endblock content %}
-
-      {% include '_footer.html' %}
+      {% if 'content' not in request.path %}
+        {% include '_footer.html' %}
+      {% endif %}
       {% if '/' == request.path %}
       <a href="javascript:" id="return-to-top"><i class="icofont icofont-arrow-up"></i></a>
       {% endif %}

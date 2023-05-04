@@ -1,6 +1,6 @@
 import stripe
 from decimal import Decimal
-from django.shortcuts import redirect, render, get_object_or_404
+from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse
 from django.conf import settings
 from django.views.generic import View
@@ -22,7 +22,7 @@ class PaymentView(LoginRequiredMixin, View):
                 reverse("courses:course_content", kwargs={"course_slug": course.slug})
             )
             cancel_url = request.build_absolute_uri(
-                reverse("payments:payment_canceled")
+                reverse("courses:course_content", kwargs={"course_slug": course.slug})
             )
             session_data = {
                 "mode": "payment",
@@ -50,13 +50,3 @@ class PaymentView(LoginRequiredMixin, View):
 
         except:
             return redirect("courses:course_list")
-
-
-# class PaymentCompletedView(LoginRequiredMixin, View):
-#     def get(self, request, *args, **kwargs):
-#         return render(request, "payments/payment_completed.html")
-
-
-class PaymentCanceledView(LoginRequiredMixin, View):
-    def get(self, request, *args, **kwargs):
-        return render(request, "payments/payment_canceled.html")
