@@ -68,8 +68,16 @@ class Enrollment(models.Model):
 class CourseContent(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
-    video_url = models.URLField(null=True, blank=True)
+    # video_url = models.URLField(null=True, blank=True)
+    video = models.FileField(upload_to="course_videos", null=True, blank=True)
     order = models.IntegerField()
 
     class Meta:
         ordering = ["order"]
+
+    @property
+    def videoURL(self):
+        if not self.video.url:
+            return ""
+        else:
+            return self.video.url

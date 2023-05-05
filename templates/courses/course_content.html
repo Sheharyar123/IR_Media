@@ -11,9 +11,14 @@
         </div>
         <div class="col-md-7 col-sm-12">
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe src="{{ content1.video_url }}" width="640" height="480" allow="autoplay" class="embed-responsive-item"></iframe>
+                {% comment %} <iframe src="{{ content1.video_url }}" width="640" height="480" allow="autoplay" class="embed-responsive-item"></iframe> {% endcomment %}
+                <video width="640" height="360" id="my-video" controls controlsList="nodownload" oncontextmenu="return false;">
+                    <source type="video/mp4" src="{{ content1.videoURL}}">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
+        <input type="hidden" id="video-url" value="{{ content1.videoURL }}"/>
         <div class="col-md-5">
             <div class="list-group">
                 {% for outline in course_content %}
@@ -29,20 +34,20 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const contentItems = document.querySelectorAll(".list-group-item");
-      
-        contentItems.forEach(function (item) {
-          item.addEventListener("click", function (e) {
-            e.preventDefault();
-            const videoUrl = event.target.getAttribute('data-video-url');
-            const videoPlayer = document.querySelector('.embed-responsive-item');
+    const contentItems = document.querySelectorAll(".list-group-item");
+    
+    contentItems.forEach(function (item) {
+        item.addEventListener("click", function (e) {
+        e.preventDefault();
+        const videoUrl = event.target.getAttribute('data-video-url');
+        const videoPlayer = document.querySelector('.embed-responsive-item');
 
-            if (videoUrl) {
-                videoPlayer.setAttribute('src', videoUrl);
-            }
-          });
+        if (videoUrl) {
+            videoPlayer.setAttribute('src', videoUrl);
+        }
         });
-      });
+    });
+    });
 </script>
 
 {% endblock content %}
