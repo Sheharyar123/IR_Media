@@ -1,0 +1,41 @@
+{% comment %} {% extends '_base.html' %} {% endcomment %}
+
+{% comment %} {% block content %} {% endcomment %}
+    <div class="container">
+        <h1 class="mt-100">Easypaisa Payment Form</h1>
+        <form id="easypaisa-payment-form" action="{% url 'payments:easypaisa_payment' %}">
+            {% csrf_token %}
+            <label for="amount">Amount (PKR):</label>
+            <input type="text" id="amount" name="amount" step="0.01">
+            <button type="submit">Submit Payment</button>
+        </form>
+        <div id="payment-status"></div>
+    </div>
+    {% comment %} <script>
+        document.getElementById('easypaisa-payment-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const amount = parseFloat(document.getElementById('amount').value);
+            const paymentStatusElement = document.getElementById('payment-status');
+        
+            if (amount > 0) {
+                const response = await fetch('/easypaisa/payment/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ amount }),
+                });
+                const data = await response.json();
+        
+                if (data.status === 'success') {
+                    paymentStatusElement.textContent = 'Payment successful!';
+                } else {
+                    paymentStatusElement.textContent = 'Payment failed. Please try again.';
+                }
+            } else {
+                paymentStatusElement.textContent = 'Please enter a valid amount.';
+            }
+        });
+    </script> {% endcomment %}
+
+{% comment %} {% endblock content %} {% endcomment %}

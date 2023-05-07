@@ -1,8 +1,6 @@
-from typing import Any, Dict
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView, DetailView, View
-from payments.models import Payment
 from .models import Course, CourseContent, Enrollment
 
 
@@ -29,12 +27,12 @@ class CourseDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        try:
-            context["enrolled"] = Enrollment.objects.filter(
-                course=self.get_object(), user=self.request.user
-            ).exists()
-        except:
-            context["enrolled"] = False
+        # try:
+        #     context["enrolled"] = Enrollment.objects.filter(
+        #         course=self.get_object(), user=self.request.user
+        #     ).exists()
+        # except:
+        #     context["enrolled"] = False
         context["course_content"] = CourseContent.objects.filter(
             course=self.get_object()
         )
@@ -44,23 +42,26 @@ class CourseDetailView(DetailView):
 class CourseContentView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         course = get_object_or_404(Course, slug=self.kwargs.get("course_slug"))
-        enrollment = Enrollment.objects.filter(
-            user=request.user, course=course
-        ).exists()
-        payment_exists = Payment.objects.filter(
-            user=request.user,
-            user_course__course=course,
-            status="complete",
-        ).exists()
-        if enrollment and payment_exists:
-            course_content = CourseContent.objects.filter(course=course)
+        # enrollment = Enrollment.objects.filter(
+        #     user=request.user, course=course
+        # ).exists()
+        # payment_exists = Payment.objects.filter(
+        #     user=request.user,
+        #     user_course__course=course,
+        #     status="complete",
+        # ).exists()
+        # if enrollment and payment_exists:
 
-            content1 = course_content.first()
-            context = {
-                "course": course,
-                "course_content": course_content,
-                "content1": content1,
-            }
-            return render(request, "courses/course_content.html", context)
-        else:
-            return render(request, "courses/course_not_enrolled.html", context)
+        course_content = CourseContent.objects.filter(course=course)
+
+        content1 = course_content.first()
+        context = {
+            "course": course,
+            "course_content": course_content,
+            "content1": content1,
+        }
+        return render(request, "courses/course_content.html", context)
+        # else:
+        #     return render(
+        #         request, "courses/course_not_enrolled.html", {"course": course}
+        #     )

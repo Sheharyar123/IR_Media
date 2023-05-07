@@ -28,7 +28,7 @@
                 <div class="text pt-4">
                   <p class="meta d-flex mt-10">
                   <span><i class="fa-solid fa-user" style="margin-right: 5px; color: #502d5a;"></i>{{ course.instructors.all|join:', '}}</span>
-                  <span style="float: right; color: #502d5a;"><i class="fa-solid fa-calendar-days mr-2" style="margin-right: 5px"></i>{{ course.duration }}</span>
+                  {% if course.duration %}<span style="float: right; color: #502d5a;"><i class="fa-solid fa-calendar-days mr-2" style="margin-right: 5px"></i>{{ course.duration }}</span>{% endif %}
                   </p>
                   <h3><a href="{{ course.get_absolute_url }}" class="course-title">{{ course.title }}</a></h3>
                   <p>{{ course.description|truncatewords:50 }}</p>

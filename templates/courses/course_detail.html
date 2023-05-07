@@ -77,16 +77,17 @@
                         </li>
                     </ul>
                     {% if request.user.is_authenticated %}
-                        {% if not enrolled %}
-                        <form method="POST" action="{% url 'payments:check_payment' course.id %}" >
+                        {% comment %} {% if not enrolled %} {% endcomment %}
+                        {% comment %} <form method="POST" action="{% url 'courses:course_content' course.id %}" >
                             {% csrf_token %}
                             <input type="submit" class="primary-btn2 text-uppercase enroll rounded-0 text-white" value="Enroll in the course" />
-                        </form>
-                        {% else %}
+                        </form> {% endcomment %}
                         <a href="{% url 'courses:course_content' course.slug %}" class="primary-btn2 text-uppercase enroll rounded-0 text-white">Go to the course</a>
-                        {% endif %}
+                        {% comment %} {% else %}
+                        <a href="{% url 'courses:course_content' course.slug %}" class="primary-btn2 text-uppercase enroll rounded-0 text-white">Go to the course</a>
+                        {% endif %} {% endcomment %}
                     {% else %}
-                        <a href="{% url 'account_login' %}?next={{ request.path }}" class="primary-btn2 text-uppercase enroll rounded-0 text-white">Enroll in the course</a>
+                        <a href="{% url 'account_signup' %}?next={% url 'courses:course_content' course.slug %}" class="primary-btn2 text-uppercase enroll rounded-0 text-white">Enroll in the course</a>
                     {% endif %}
 
                     {% comment %} <h4 class="title">Reviews</h4>

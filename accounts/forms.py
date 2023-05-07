@@ -23,3 +23,10 @@ class CustomSignupForm(SignupForm):
             field.widget.attrs.update({"class": "form-control", "placeholder": ""})
             if field.label == "Password (again)":
                 field.label = "Confirm Password"
+
+    def save(self, request):
+        user = super(CustomSignupForm, self).save(request)
+        user.name = self.cleaned_data["name"]
+        user.phone_no = self.cleaned_data["phone_no"]
+        user.save()
+        return user

@@ -108,3 +108,18 @@ $(document).ready(function () {
     }
   });
 });
+
+async function makeEasypaisaPayment() {
+  const response = await fetch("/easypaisa/payment/", { method: "POST" });
+  const data = await response.json();
+
+  if (data.status === "success") {
+    // Show a success message and redirect to another page
+  } else {
+    // Show an error message
+  }
+}
+
+document
+  .getElementById("easypaisa-payment-button")
+  .addEventListener("click", makeEasypaisaPayment);
