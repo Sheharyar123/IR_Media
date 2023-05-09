@@ -13,7 +13,15 @@ class CourseContentAdmin(admin.StackedInline):
 
 
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ["title", "price", "category", "duration", "language", "is_active"]
+    list_display = [
+        "title",
+        "price",
+        "category",
+        "duration",
+        "language",
+        "choice",
+        "is_active",
+    ]
     inlines = [EnrollmentAdmin, CourseContentAdmin]
     prepopulated_fields = {"slug": ("title",)}
     list_editable = ["is_active"]

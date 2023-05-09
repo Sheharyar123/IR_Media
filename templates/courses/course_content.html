@@ -6,23 +6,24 @@
 
 <main class="container">
     <div class="row mt-80 mb-50">
-        <div class="col-md-12 col-sm-12">
-            <h1 class="text-center mb-20">{{ course.title }}</h1>
+        <div class="col-12">
+            <h1 class="text-center mb-20 course-title" style="font-size: 40px;">{{ course.title }}</h1>
         </div>
         <div class="col-md-7 col-sm-12">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe src="{{ content1.video_url }}" width="640" height="480" allow="autoplay" class="embed-responsive-item"></iframe>
+            <div class="embed-responsive embed-responsive-16by9" style="margin-bottom: 20px">
+                <iframe src="{{ content1.video_url }}" width="640" height="480" allow="autoplay" class="embed-responsive-item" style="z-index: 100"></iframe>
                 {% comment %} <video width="640" height="360" id="my-video" controls controlsList="nodownload" oncontextmenu="return false;">
                     <source type="video/mp4" src="{{ content1.videoURL}}">
                     Your browser does not support the video tag.
                 </video> {% endcomment %}
+                {% comment %} <iframe width="560" height="315" src="https://www.youtube.com/embed/v3uujwiPUjA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> {% endcomment %}
             </div>
         </div>
-        <input type="hidden" id="video-url" value="{{ content1.videoURL }}"/>
+        {% comment %} <input type="hidden" id="video-url" value="{{ content1.videoURL }}"/> {% endcomment %}
         <div class="col-md-5">
             <div class="list-group">
                 {% for outline in course_content %}
-                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-video-url="{{ outline.video_url }}" id="outline-item-{{forloop.counter}}">
+                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-video-url="{{ outline.video_url }}" id="outline-item-{{forloop.counter}}" style="font-size: 1.5rem;">
                     <strong>Lesson {{ forloop.counter }}: </strong>{{ outline.title }}
                     {% comment %} <span class="badge bg-success">Completed</span> {% endcomment %}
                 </a>
@@ -48,6 +49,7 @@
         });
     });
     });
+
 </script>
 
 {% endblock content %}

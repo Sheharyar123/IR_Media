@@ -26,7 +26,10 @@ class CustomSignupForm(SignupForm):
 
     def save(self, request):
         user = super(CustomSignupForm, self).save(request)
-        user.name = self.cleaned_data["name"]
-        user.phone_no = self.cleaned_data["phone_no"]
-        user.save()
+        try:
+            user.name = self.cleaned_data["name"]
+            user.phone_no = self.cleaned_data["phone_no"]
+            user.save()
+        except:
+            pass
         return user

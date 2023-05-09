@@ -66,7 +66,7 @@
                         <li>
                             <a class="justify-content-between d-flex" href="#">
                                 <p>Course Fee</p>
-                                <span>${{ course.price }}</span>
+                                <span>{{ course.choice|capfirst }}</span>
                             </a>
                         </li>
                         <li>
@@ -220,7 +220,7 @@
 
     <div class='video-wrapper'>
         <div class='video'>
-            <iframe id="player" width="560" height="315" src="https://www.youtube.com/embed/1MjMvFRrNa4" frameborder="0" allowfullscreen></iframe>
+            <iframe id="player" width="560" height="315" src="{{ course_content.first.video_url }}" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
 

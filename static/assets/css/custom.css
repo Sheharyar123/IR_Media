@@ -127,6 +127,10 @@
   .course_details_left .course_list {
     padding-left: 0;
   }
+
+  .course-title {
+    font-size: 30px !important;
+  }
 }
 .course_details_left .course_list li {
   list-style: none;

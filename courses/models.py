@@ -22,6 +22,7 @@ class Student(models.Model):
 
 
 class Course(models.Model):
+    CHOICES = (("FREE", "FREE"), ("PAID", "PAID"))
     id = models.UUIDField(primary_key=True, editable=False, default=uuid.uuid4)
     title = models.CharField(max_length=255)
     slug = models.SlugField()
@@ -31,7 +32,8 @@ class Course(models.Model):
     category = models.CharField(max_length=255, null=True, blank=True)
     language = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(blank=True)
-    price = models.DecimalField(max_digits=8, decimal_places=2)
+    price = models.DecimalField(max_digits=8, decimal_places=2, null=True, blank=True)
+    choice = models.CharField(choices=CHOICES, max_length=4, null=True, blank=True)
     duration = models.CharField(max_length=50, null=True, blank=True)
     is_active = models.BooleanField("Is Active", default=True)
     added_on = models.DateTimeField(auto_now_add=True)
