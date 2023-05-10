@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.template.defaultfilters import slugify
+from ckeditor.fields import RichTextField
 
 User = get_user_model()
 
@@ -31,7 +32,7 @@ class Course(models.Model):
     image = models.ImageField(upload_to="courses/course_images", null=True, blank=True)
     category = models.CharField(max_length=255, null=True, blank=True)
     language = models.CharField(max_length=255, null=True, blank=True)
-    description = models.TextField(blank=True)
+    description = RichTextField(blank=True)
     price = models.DecimalField(max_digits=8, decimal_places=2, null=True, blank=True)
     choice = models.CharField(choices=CHOICES, max_length=4, null=True, blank=True)
     duration = models.CharField(max_length=50, null=True, blank=True)

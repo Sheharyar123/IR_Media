@@ -17,7 +17,7 @@
                     <div class="content_wrapper">
                         <h4 class="title">Description</h4>
                         <div class="content">
-                            {{ course.description }}
+                            {{ course.description|safe }}
                         </div>
 
                         {% comment %} <h4 class="title">Eligibility</h4>

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
     "storages",
+    "ckeditor",
     # Local
     "core.apps.CoreConfig",
     "accounts.apps.AccountsConfig",
@@ -146,7 +147,7 @@ AUTHENTICATION_BACKENDS = [
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
-SITE_ID = 2
+SITE_ID = 3
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "none"
@@ -212,12 +213,12 @@ SESSION_COOKIE_SECURE = env.bool("DJANGO_SESSION_COOKIE_SECURE", default=True)
 CSRF_COOKIE_SECURE = env.bool("DJANGO_CSRF_COOKIE_SECURE", default=True)
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
-# Cloudinary Configurations
-cloudinary.config(
-    cloud_name=env.str("CLOUDINARY_CLOUD_NAME"),
-    api_key=env.str("CLOUDINARY_API_KEY"),
-    api_secret=env.str("CLOUDINARY_API_SECRET"),
-)
+# # Cloudinary Configurations
+# cloudinary.config(
+#     cloud_name=env.str("CLOUDINARY_CLOUD_NAME"),
+#     api_key=env.str("CLOUDINARY_API_KEY"),
+#     api_secret=env.str("CLOUDINARY_API_SECRET"),
+# )
 
 
 # CSRF Settings
@@ -243,13 +244,13 @@ MESSAGE_TAGS = {
 
 
 # AWS Settings
-# AWS_ACCESS_KEY_ID = env.str("AWS_ACCESS_KEY_ID")
-# AWS_SECRET_ACCESS_KEY = env.str("AWS_SECRET_ACCESS_KEY")
-# AWS_STORAGE_BUCKET_NAME = env.str("AWS_STORAGE_BUCKET_NAME")
-# AWS_S3_REGION_NAME = env.str("AWS_S3_REGION_NAME")
-# AWS_MEDIA_LOCATION = "media"
-# MEDIA_URL = f"https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/{AWS_MEDIA_LOCATION}/"
-# # The local path for media files (this is where files will be stored before they are uploaded to S3)
-# MEDIA_ROOT = BASE_DIR / "media"
-# # Use Amazon S3 for media storage
-# DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+AWS_ACCESS_KEY_ID = env.str("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = env.str("AWS_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = env.str("AWS_STORAGE_BUCKET_NAME")
+AWS_S3_REGION_NAME = env.str("AWS_S3_REGION_NAME")
+AWS_MEDIA_LOCATION = "media"
+MEDIA_URL = f"https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/{AWS_MEDIA_LOCATION}/"
+# The local path for media files (this is where files will be stored before they are uploaded to S3)
+MEDIA_ROOT = BASE_DIR / "media"
+# Use Amazon S3 for media storage
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"

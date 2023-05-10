@@ -31,7 +31,7 @@
                   {% if course.duration %}<span style="float: right; color: #502d5a;"><i class="fa-solid fa-calendar-days mr-2" style="margin-right: 5px"></i>{{ course.duration }}</span>{% endif %}
                   </p>
                   <h3><a href="{{ course.get_absolute_url }}" class="course-title">{{ course.title }}</a></h3>
-                  <p>{{ course.description|truncatewords:50 }}</p>
+                  <p>{{ course.description|truncatewords:50|safe }}</p>
                   <p><a href="{{ course.get_absolute_url }}" class="btn btn-lg btn-gradient-secondary btn-square">See Details</a></p>
                 </div>
             </div>

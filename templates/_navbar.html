@@ -26,7 +26,7 @@ class="navbar navbar-default navbar-fixed navbar-transparent white bootsnav on n
     </div>
   </div>
   <!--== End Top Search ==-->
-  <div class="container">
+  <div {% if 'login' in request.path or 'signup' in request.path %}class=""{% else %}class="container"{% endif %}>
     <!--== Start Atribute Navigation ==-->
     <div class="attr-nav hidden-xs sm-display-none">
       <ul>
