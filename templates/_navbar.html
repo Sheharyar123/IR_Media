@@ -1,9 +1,7 @@
 {% load static %}
 <!--== Header Start ==-->
 <nav
-
 class="navbar navbar-default navbar-fixed navbar-transparent white bootsnav on no-full navbar-gradient no-border"
-
 >
   <!--== Start Top Search ==-->
   <div class="fullscreen-search-overlay" id="search-overlay">
@@ -26,7 +24,7 @@ class="navbar navbar-default navbar-fixed navbar-transparent white bootsnav on n
     </div>
   </div>
   <!--== End Top Search ==-->
-  <div {% if 'login' in request.path or 'signup' in request.path %}class=""{% else %}class="container"{% endif %}>
+  <div class="container">
     <!--== Start Atribute Navigation ==-->
     <div class="attr-nav hidden-xs sm-display-none">
       <ul>
@@ -89,8 +87,8 @@ class="navbar navbar-default navbar-fixed navbar-transparent white bootsnav on n
         {% if request.user.is_authenticated %}
         <li><a class="page-scroll" href="{% url 'account_logout' %}">Logout</a></li>
         {% else %}
-        <li><a class="page-scroll" href="{% url 'account_login' %}">Login</a></li>
-        <li><a class="page-scroll" href="{% url 'account_signup' %}">Sign Up</a></li>
+        <li><a class="page-scroll" href="{% url 'account_login' %}?next={{ request.path }}">Login</a></li>
+        <li><a class="page-scroll" href="{% url 'account_signup' %}?next={{ request.path }}">Sign Up</a></li>
         {% endif %}
       </ul>
     </div>
@@ -138,8 +136,8 @@ class="navbar navbar-default navbar-fixed navbar-transparent white bootsnav on n
         {% if request.user.is_authenticated %}
         <li class="link-item"><a class="page-scroll" href="{% url 'account_logout' %}">Logout</a></li>
         {% else %}
-        <li class="link-item"><a class="page-scroll" href="{% url 'account_login' %}">Login</a></li>
-        <li class="link-item"><a class="page-scroll" href="{% url 'account_signup' %}">Sign Up</a></li>
+        <li class="link-item"><a class="page-scroll" href="{% url 'account_login' %}?next={{ request.path }}">Login</a></li>
+        <li class="link-item"><a class="page-scroll" href="{% url 'account_signup' %}?next={{ request.path }}">Sign Up</a></li>
         {% endif %}
       </ul>
     </div>

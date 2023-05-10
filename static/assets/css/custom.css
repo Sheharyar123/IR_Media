@@ -302,3 +302,9 @@ div.video-wrapper {
     font-size: 35px !important;
   }
 }
+
+@media (max-width: 1000px) {
+  .navbar .container {
+    display: block !important;
+  }
+}
