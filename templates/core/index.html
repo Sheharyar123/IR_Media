@@ -561,42 +561,33 @@
     <section class="gradient-bg-two sm-pb-80 sm-pt-80">
     <div class="container">
         <div class="row">
-        <div class="col-md-3 col-sm-5 xs-mb-40 sm-mb-40 xs-ml-40 sm-ml-40">
-            <div class="counter-type-2 relative white-color">
-            <i class="icon-hourglass dark-color font-50px"></i>
-            <h3 class="display-block mt-0 mb-0">
-                <span class="counter font-600">352</span>
-            </h3>
-            <h5 class="mt-0 open-font font-400 mb-0">Happy Clients</h5>
+            <div class="col-md-4 col-sm-5 xs-mb-40 sm-mb-40 xs-ml-40 sm-ml-40">
+                <div class="counter-type-2 relative white-color">
+                <i class="icon-hourglass dark-color font-50px"></i>
+                <h3 class="display-block mt-0 mb-0">
+                    <span class="counter font-600">352</span>
+                </h3>
+                <h5 class="mt-0 open-font font-400 mb-0">Happy Clients</h5>
+                </div>
             </div>
-        </div>
-        <div class="col-md-3 col-sm-5 xs-mb-40 sm-mb-40 xs-ml-40 sm-ml-40">
-            <div class="counter-type-2 relative white-color">
-            <i class="icon-lightbulb dark-color font-50px"></i>
-            <h3 class="display-block mt-0 mb-0">
-                <span class="counter font-600">10</span>
-            </h3>
-            <h5 class="mt-0 open-font font-400 mb-0">Years Experience</h5>
+            <div class="col-md-4 col-sm-5 xs-mb-40 sm-mb-40 xs-ml-40 sm-ml-40">
+                <div class="counter-type-2 relative white-color">
+                <i class="icon-lightbulb dark-color font-50px"></i>
+                <h3 class="display-block mt-0 mb-0">
+                    <span class="counter font-600">10</span>
+                </h3>
+                <h5 class="mt-0 open-font font-400 mb-0">Years Experience</h5>
+                </div>
             </div>
-        </div>
-        <div class="col-md-3 col-sm-5 xs-mb-40 sm-mb-0 xs-ml-40 sm-ml-40">
-            <div class="counter-type-2 relative white-color">
-            <i class="icon-wine dark-color font-50px"></i>
-            <h3 class="display-block mt-0 mb-0">
-                <span class="counter font-600">662</span>
-            </h3>
-            <h5 class="mt-0 open-font font-400 mb-0">Projects Completed</h5>
+            <div class="col-md-4 col-sm-5 xs-mb-40 sm-mb-0 xs-ml-40 sm-ml-40">
+                <div class="counter-type-2 relative white-color">
+                <i class="icon-wine dark-color font-50px"></i>
+                <h3 class="display-block mt-0 mb-0">
+                    <span class="counter font-600">662</span>
+                </h3>
+                <h5 class="mt-0 open-font font-400 mb-0">Projects Completed</h5>
+                </div>
             </div>
-        </div>
-        <div class="col-md-3 col-sm-5 xs-mb-0 sm-mb-0 xs-ml-40 sm-ml-40">
-            <div class="counter-type-2 relative white-color">
-            <i class="icon-hotairballoon dark-color font-50px"></i>
-            <h3 class="display-block mt-0 mb-0">
-                <span class="counter font-600">444</span>
-            </h3>
-            <h5 class="mt-0 open-font font-400 mb-0">Awards</h5>
-            </div>
-        </div>
         </div>
     </div>
     </section>
@@ -891,7 +882,7 @@
             <div class="gradient-bg-icon-two mb-20">
             <i class="icon-layers font-30px white-color"></i>
             </div>
-            <h5 class="mt-10">Research</h5>
+            <h5 class="mt-10">Training</h5>
             <p class="font-400">
             Digital m Marketing Agency offers comprehensive research services to
             help you understand the needs of your target market.
@@ -974,7 +965,7 @@
                 <span class="skill-bar-percent">86%</span>
             </div>
             <div class="skillbar" data-percent="79">
-                <span class="skillbar-title text-uppercase">Research</span>
+                <span class="skillbar-title text-uppercase">Training</span>
                 <p class="skillbar-bar gradient-bg-two"></p>
                 <span class="skill-bar-percent">79%</span>
             </div>
@@ -1017,7 +1008,7 @@
     <!--== About Company End ==-->
 
     <!--== Portfolio Start ==-->
-    <section class="grey-bg" id="portfolio">
+    <!--== <section class="grey-bg" id="portfolio">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 centerize-col text-center">
@@ -1206,11 +1197,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> ==-->
     <!--== Portfolio End ==-->
 
     <!--== Video Start ==-->
-    <section
+    {% comment %} <section
     class="parallax-bg fixed-bg"
     data-parallax-bg-image="{% static 'assets/images/background/parallax-bg-2.jpg' %}"
     data-parallax-speed="0.5"
@@ -1230,7 +1221,7 @@
         </div>
         </div>
     </div>
-    </section>
+    </section> {% endcomment %}
     <!--== Video End ==-->
 
     {% comment %} <!--== Pricing Table Start ==-->
@@ -1581,7 +1572,7 @@
     <!--== Blogs End ==-->
 
     <!--== Contact Start ==-->
-    <section class="white-bg transition-none" id="contact">
+    <section class="white-bg transition-none" id="contact" style="padding-top: 60px !important;">
     <div class="container">
         <div class="row">
         <div class="col-md-8 centerize-col text-center">
@@ -1599,13 +1590,13 @@
         </div>
         </div>
     </div>
-    <div class="container-fluid">
+    {% comment %} <div class="container-fluid">
         <div class="row mt-50">
             <div class="wide">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d27051.871571398948!2d72.709505!3d32.056157!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc349b937fc26ae48!2sIR%20Media!5e0!3m2!1sen!2sus!4v1677678041154!5m2!1sen!2sus" height="600" style="border:0; width:100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
     <div class="container">
         <div class="row mt-70">
         <div class="col-md-6 col-sm-6 col-xs-12 xs-mb-50">

@@ -79,7 +79,7 @@ class="navbar navbar-default navbar-fixed navbar-transparent white bootsnav on n
         {% comment %} <li><a class="page-scroll" href="{% url 'core:index' %}#team">Team</a></li> {% endcomment %}
         <li><a class="page-scroll" href="{% url 'core:index' %}#service">Services</a></li>
         <li><a class="page-scroll" href="{% url 'core:index' %}#about">About</a></li>
-        <li><a class="page-scroll" href="{% url 'core:index' %}#portfolio">Portfolio</a></li>
+        {% comment %} <li><a class="page-scroll" href="{% url 'core:index' %}#portfolio">Portfolio</a></li> {% endcomment %}
         {% comment %} <li><a class="page-scroll" href="{% url 'core:index' %}#pricing">Pricings</a></li> {% endcomment %}
         <li><a class="page-scroll" href="{% url 'blogs:post_list' %}">Blogs</a></li>
         <li><a class="page-scroll" href="{% url 'courses:course_list' %}">Courses</a></li>
@@ -119,7 +119,7 @@ class="navbar navbar-default navbar-fixed navbar-transparent white bootsnav on n
           <a class="page-scroll" href="{% url 'core:index' %}#about">About</a>
         </li>
         <li class="link-item">
-          <a class="page-scroll" href="{% url 'core:index' %}#portfolio">Portfolio</a>
+          {% comment %} <a class="page-scroll" href="{% url 'core:index' %}#portfolio">Portfolio</a> {% endcomment %}
         </li>
         {% comment %} <li class="link-item">
           <a class="page-scroll" href="{% url 'core:index' %}#pricing">Pricings</a>

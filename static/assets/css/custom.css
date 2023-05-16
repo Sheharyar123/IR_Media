@@ -223,10 +223,10 @@
     letter-spacing: 1px !important;
     font-weight: 400 !important;
   }
-  .home-btn {
+  /* .home-btn {
     text-align: center !important;
     margin: 10px auto !important;
-  }
+  } */
 
   .rev_slider a {
     transition: none !important;
@@ -241,10 +241,10 @@
     letter-spacing: 1px !important;
     font-weight: 400 !important;
   }
-  .home-btn {
+  /* .home-btn {
     text-align: center !important;
     margin: 10px auto !important;
-  }
+  } */
   .rev_slider a {
     transition: none !important;
   }
