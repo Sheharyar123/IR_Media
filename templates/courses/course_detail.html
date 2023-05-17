@@ -41,21 +41,24 @@
                             commodo consequat. Duis aute
                             irure dolor in reprehenderit in voluptate velit esse cillum.
                         </div> {% endcomment %}
-
-                        <h4 class="title">Course Outline</h4>
-                        <div class="content">
-                            <ul class="course_list">
-                               {% for content in course_content %}
-                               <li>{{ content.title }}</li>
-                               {% endfor %}
-                            </ul>
-                        </div>
+                        {% if course_content %}    
+                            <h4 class="title">Course Outline</h4>
+                            <div class="content">
+                                <ul class="course_list">
+                                {% for content in course_content %}
+                                <li>{{ content.title }}</li>
+                                {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
 
 
                 <div class="col-lg-4 right-contents">
-                    <span class='button'>Watch Preview</span>
+                    {% if course_content.first.video_url %}
+                        <span class='button'>Watch Preview</span>
+                    {% endif %}
                     <ul style="margin-top: 10px">
                         <li>
                             <a class="justify-content-between d-flex" href="#">

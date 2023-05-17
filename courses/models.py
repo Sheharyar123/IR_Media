@@ -71,8 +71,8 @@ class Enrollment(models.Model):
 class CourseContent(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
-    video_url = models.URLField(null=True, blank=True)
-    # video = models.FileField(upload_to="course_videos", null=True, blank=True)
+    video_url = models.URLField(max_length=500, null=True, blank=True)
+    video = models.FileField(upload_to="course_videos", null=True, blank=True)
     order = models.IntegerField()
 
     class Meta:
@@ -80,7 +80,9 @@ class CourseContent(models.Model):
 
     @property
     def videoURL(self):
-        if not self.video_url:
-            return ""
-        else:
+        if self.video_url:
             return self.video_url
+        elif self.video.url:
+            return self.video.url
+        else:
+            return ""

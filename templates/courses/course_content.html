@@ -11,12 +11,15 @@
         </div>
         <div class="col-md-7 col-sm-12">
             <div class="embed-responsive embed-responsive-16by9" style="margin-bottom: 20px">
-                <iframe src="{{ content1.video_url }}" width="640" height="480" allow="autoplay" class="embed-responsive-item" style="z-index: 100"></iframe>
+                {% comment %} <iframe src="{{ content1.video_url }}" width="640" height="480" allow="autoplay" class="embed-responsive-item" style="z-index: 100"></iframe> {% endcomment %}
                 {% comment %} <video width="640" height="360" id="my-video" controls controlsList="nodownload" oncontextmenu="return false;">
                     <source type="video/mp4" src="{{ content1.videoURL}}">
                     Your browser does not support the video tag.
                 </video> {% endcomment %}
                 {% comment %} <iframe width="560" height="315" src="https://www.youtube.com/embed/v3uujwiPUjA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> {% endcomment %}
+                <video width="640" height="480" controls>
+                    <source src="{{ content1.video_url }}" type="video/mp4" >
+                </video>
             </div>
         </div>
         {% comment %} <input type="hidden" id="video-url" value="{{ content1.videoURL }}"/> {% endcomment %}
@@ -49,6 +52,7 @@
         });
     });
     });
+    
 
 </script>
 

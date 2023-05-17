@@ -251,6 +251,7 @@ AWS_S3_REGION_NAME = env.str("AWS_S3_REGION_NAME")
 AWS_MEDIA_LOCATION = "media"
 MEDIA_URL = f"https://{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com/{AWS_MEDIA_LOCATION}/"
 # The local path for media files (this is where files will be stored before they are uploaded to S3)
-MEDIA_ROOT = BASE_DIR / "media"
+# MEDIA_ROOT = BASE_DIR / "media"
+# MEDIA_URL = "/media/"
 # Use Amazon S3 for media storage
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
