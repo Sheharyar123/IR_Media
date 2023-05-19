@@ -1,0 +1,81 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}IR Media | Refund Policy{% endblock title %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12" style="background-color: #fff;">
+        <h1 class="text-center mt-100" style="font-size: 35px">Refund Policy</h1>
+        </div>
+    </div>
+
+    <section class="white-bg pt-30">
+        <div class="container">
+          <div class="row blog-style-01">
+              <div class="col-md-8 col-sm-12 col-xs-12 mb-20">
+                <p style="margin-bottom: 10px;">
+                    IR Media offers a refund policy to ensure customer satisfaction. 
+                    You may be eligible for a refund if you meet the following criteria:
+                </p>
+                <div>
+                    <h4>Content Purchases</h4>
+                    <p>
+                        If you have purchased content on IR Media, you can request a refund within 
+                        30 days of the original purchase date. Refunds will be considered under 
+                        the following circumstances:
+                    </p>
+                    <ul style="margin-left: 30px; margin-bottom: 10px;">
+                        <li>The content does not meet your expectations in terms of quality or relevance.</li>
+                        <li> The content is significantly different from the description provided on the platform.</li>
+                        <li>Technical issues prevent you from accessing or using the content.</li>
+                    </ul>
+                    <p>
+                        Please note that refund requests based on personal circumstances or changes 
+                        in your learning preferences may not be eligible for a refund.
+                    </p>
+                </div>
+                <div>
+                    <h4>Refund Process</h4>
+                    <p>
+                        To request a refund, please follow these steps:
+                    </p>
+                    <ul style="margin-left: 30px; margin-bottom: 10px;">
+                        <li><strong>Contact our Support Team:</strong> Submit a refund request by contacting our Support 
+                            Team within 30 days of the original purchase date. Provide details about 
+                            the content and reasons for the refund.</li>
+                        <li><strong>Refund Evaluation:</strong> Our team will review your request and assess its eligibility based on the refund criteria mentioned above.</li>
+                        <li><strong>Refund Notification:</strong> We will notify you of the decision regarding your refund request. If approved, we will provide instructions on the refund process.</li>
+                        <li><strong>Refund Issuance:</strong> Refunds may be issued as a refund credit or returned to your original payment method, at our discretion. The refund process may take several business days to complete.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Refund Denials</h4>
+                    <p>
+                        IR Media reserves the right to deny refund requests in the following circumstances:
+                    </p>
+                    <ul style="margin-left: 30px; margin-bottom: 10px;">
+                        <li>Abuse of the refund policy, such as excessive refund requests.</li>
+                        <li>Violation of our Terms of Use or content and behavior rules.</li>
+                        <li>Suspected fraudulent activity or misuse of the platform.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Changes to the Refund Policy</h4>
+                    <p>
+                        IR Media may modify the refund policy at its discretion. Any changes or 
+                        updates will be communicated on our platform. By continuing to use the 
+                        IR Media platform after any modifications to the refund policy, you 
+                        acknowledge and accept the updated policy.
+                    </p>
+                    <p>If you have any questions or need further assistance regarding our 
+                       refund policy, please contact our <a href="{% url 'core:index' %}#contact">Support Team</a>.
+                    </p>
+                </div>
+              </div>
+          </div>
+        </div>
+    </section>
+
+{% endblock content %}

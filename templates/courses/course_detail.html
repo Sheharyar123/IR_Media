@@ -6,8 +6,8 @@
     <!--================ Start Course Details Area =================-->
     <section class="course_details_area section_gap">
         <div class="container">
-            <div class="col-md-8 col-lg-8 col-sm-12">
-                <h1 class="course-title mb-20">{{ course.title }}</h1>
+            <div class="col-12">
+                <h1 class="course-title mb-20 text-center">{{ course.title }}</h1>
             </div>
             <div class="row">
                 <div class="col-lg-8 course_details_left">
@@ -17,7 +17,13 @@
                     <div class="content_wrapper">
                         <h4 class="title">Description</h4>
                         <div class="content">
-                            {{ course.description|safe }}
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-8 col-sm-12">
+                                        {{ course.description|safe }}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         {% comment %} <h4 class="title">Eligibility</h4>
@@ -56,7 +62,7 @@
 
 
                 <div class="col-lg-4 right-contents">
-                    {% if course_content.first.video_url %}
+                    {% if not course.choice == "FREE" %}
                         <span class='button'>Watch Preview</span>
                     {% endif %}
                     <ul style="margin-top: 10px">

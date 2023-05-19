@@ -1,0 +1,109 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}IR Media | Privacy Policy{% endblock title %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12" style="background-color: #fff;">
+        <h1 class="text-center mt-100" style="font-size: 35px">Privacy Policy</h1>
+        </div>
+    </div>
+
+    <section class="white-bg pt-30">
+        <div class="container">
+          <div class="row blog-style-01">
+              <div class="col-md-8 col-sm-12 col-xs-12 mb-20">
+                <p style="margin-bottom: 10px;">
+                    At IR Media, we value the privacy of our users and are committed to protecting 
+                    their personal information. This Privacy Policy outlines the types of 
+                    information we collect when you use our website, how we use and protect 
+                    that information, and your rights and choices regarding your personal data.
+                </p>
+                <div>
+                    <h4>Information We Collect</h4>
+                    <p>
+                        <strong>Personal Information:</strong> When you create an account or interact with our 
+                        website, we may collect personal information such as your name, 
+                        email address, and other contact details. We may also collect payment 
+                        information when necessary for transactions.
+                    </p>
+                    <p>
+                        <strong>Usage Data:</strong> We collect information about how you 
+                        interact with our website, including your IP address, browser type, 
+                        device information, and pages visited. This information helps us 
+                        improve our services and enhance your experience.
+                    </p>
+                    <p>
+                        <strong>Cookies and Tracking Technologies:</strong> We use cookies and similar 
+                        tracking technologies to collect information about your 
+                        browsing activities. These technologies help us analyze trends, 
+                        administer the website, and track users' movements on the site.
+                    </p>
+                </div>
+
+                <div>
+                    <h4>Use of Information</h4>
+                    <p>
+                        <strong>Providing Services:</strong> We use the collected information 
+                        to provide and improve our services, customize your learning experience, 
+                        and respond to your inquiries and requests.
+                    </p>
+                    <p>
+                        <strong>Communication:</strong> We may use your contact information to 
+                        send you administrative and promotional communications about our services. 
+                        You can opt-out of marketing communications at any time.
+                    </p>
+                    <p>
+                        <strong>Analytics:</strong> We may use the collected data for analytical 
+                        purposes, such as monitoring website usage patterns, tracking user 
+                        preferences, and gathering demographic information.
+                    </p>
+                </div>
+                <div>
+                    <h4>Data Security</h4>
+                    <p>
+                        We implement appropriate security measures to protect the 
+                        confidentiality and integrity of your personal information. 
+                        However, please note that no method of transmission over the internet 
+                        or electronic storage is 100% secure. We cannot guarantee absolute 
+                        security.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4>Your Rights and Choices</h4>
+                    <p>
+                        You have certain rights and choices regarding your personal information. You can:
+                    </p>
+                    <ul style="margin-left: 30px; margin-bottom: 10px;">
+                        <li>Access, update, or delete your personal information by logging into your account settings or contacting us directly.</li>
+                        <li>Object to the processing of your personal information, subject to legal requirements.</li>
+                        <li>Opt-out of receiving promotional communications from us.</li>
+                        <li>Set your browser to refuse cookies or alert you when cookies are being sent.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Changes to this Privacy Policy</h4>
+                    <p>
+                        We may update this Privacy Policy from time to time to reflect changes 
+                        in our practices or legal obligations. We will notify you of any material 
+                        changes by posting the updated policy on our website or through other 
+                        communication methods.
+                    </p>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <p>
+                        If you have any questions, concerns, or requests regarding this 
+                        Privacy Policy or the use of your personal information, please 
+                        <a href="{% url 'core:index' %}#contact">contact us</a>.
+                    </p>
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+{% endblock content %}

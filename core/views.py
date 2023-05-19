@@ -38,3 +38,18 @@ class HomePageView(View):
                 return JsonResponse({"status": "failed"})
         else:
             return JsonResponse({"status": "failed"})
+
+
+class TermsAndConditionsView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "core/terms_and_conditions.html")
+
+
+class RefundPolicyView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "core/refund_policy.html")
+
+
+class PrivacyPolicyView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "core/privacy_policy.html")
