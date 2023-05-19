@@ -98,7 +98,6 @@
 .course_details_area .title {
   font-size: 21px;
   border: none;
-  cursor: pointer;
   margin-top: 40px;
   border-bottom: 1px solid #eeeeee;
   position: relative;
@@ -318,4 +317,9 @@ div.video-wrapper {
     height: 250px !important;
     width: 400px !important;
   }
+}
+
+.right-contents p {
+  display: flex;
+  justify-content: space-between;
 }

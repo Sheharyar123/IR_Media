@@ -65,26 +65,26 @@
                     <span class='button'>Watch Preview</span>
                     <ul style="margin-top: 10px">
                         <li>
-                            <a class="justify-content-between d-flex" href="#">
+                            <p>
                                 <strong>Trainer’s Name</strong>
                                 <span class="or">{{ course.instructors.all|join:', '}}</span>
-                            </a>
+                            </p>
                         </li>
                         <li>
-                            <a class="justify-content-between d-flex" href="#">
+                            <p>
                                 <strong>Course Fee</strong>
                                 {% if course.choice == 'FREE' %}
                                     <span>{{ course.choice|capfirst }}</span>
                                 {% else %}
                                     <span>${{ course.price|floatformat:0  }}</span>
                                 {% endif %}
-                            </a>
+                            </p>
                         </li>
                         <li>
-                            <a class="justify-content-between d-flex" href="#">
+                            <p>
                                 <strong>Language</strong>
                                 <span>{{ course.language }}</span>
-                            </a>
+                            </p>
                         </li>
                     </ul>
                     {% if request.user.is_authenticated %}
