@@ -62,25 +62,27 @@
 
 
                 <div class="col-lg-4 right-contents">
-                    {% if not course.choice == "FREE" %}
-                        <span class='button'>Watch Preview</span>
-                    {% endif %}
+                    <span class='button'>Watch Preview</span>
                     <ul style="margin-top: 10px">
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p>Trainer’s Name</p>
+                                <strong>Trainer’s Name</strong>
                                 <span class="or">{{ course.instructors.all|join:', '}}</span>
                             </a>
                         </li>
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p>Course Fee</p>
-                                <span>{{ course.choice|capfirst }}</span>
+                                <strong>Course Fee</strong>
+                                {% if course.choice == 'FREE' %}
+                                    <span>{{ course.choice|capfirst }}</span>
+                                {% else %}
+                                    <span>${{ course.price|floatformat:0  }}</span>
+                                {% endif %}
                             </a>
                         </li>
                         <li>
                             <a class="justify-content-between d-flex" href="#">
-                                <p>Language</p>
+                                <strong>Language</strong>
                                 <span>{{ course.language }}</span>
                             </a>
                         </li>

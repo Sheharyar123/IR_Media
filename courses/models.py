@@ -29,7 +29,8 @@ class Course(models.Model):
     slug = models.SlugField()
     instructors = models.ManyToManyField(Instructor, blank=True, related_name="courses")
     students = models.ManyToManyField("Student", blank=True, related_name="courses")
-    image = models.ImageField(upload_to="courses/course_images", null=True, blank=True)
+    # image = models.ImageField(upload_to="courses/course_images", null=True, blank=True)
+    image = models.URLField(max_length=2000, null=True, blank=True)
     category = models.CharField(max_length=255, null=True, blank=True)
     language = models.CharField(max_length=255, null=True, blank=True)
     description = RichTextField(blank=True)
@@ -50,10 +51,10 @@ class Course(models.Model):
 
     @property
     def imageURL(self):
-        if not self.image.url:
+        if not self.image:
             return ""
         else:
-            return self.image.url
+            return self.image
 
 
 class Enrollment(models.Model):

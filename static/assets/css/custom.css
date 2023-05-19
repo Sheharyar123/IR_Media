@@ -308,3 +308,14 @@ div.video-wrapper {
     display: block !important;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .video {
+    margin: 0 auto;
+  }
+
+  #player {
+    height: 250px !important;
+    width: 400px !important;
+  }
+}
