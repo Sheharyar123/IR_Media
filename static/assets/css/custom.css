@@ -122,6 +122,10 @@
   margin-top: 10px;
   width: 100%;
 }
+.video-supplements-thumbnail {
+  background-color: #888 !important;
+}
+
 @media (max-width: 575px) {
   .course_details_left .course_list {
     padding-left: 0;
@@ -322,4 +326,9 @@ div.video-wrapper {
 .right-contents p {
   display: flex;
   justify-content: space-between;
+}
+
+.download-item:active,
+.download-item:hover {
+  color: blue !important;
 }

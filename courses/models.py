@@ -71,9 +71,10 @@ class Enrollment(models.Model):
 
 class CourseContent(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, null=True, blank=True)
     video_url = models.URLField(max_length=500, null=True, blank=True)
     video = models.FileField(upload_to="course_videos", null=True, blank=True)
+    download_link = models.FileField(upload_to="course_files", null=True, blank=True)
     order = models.IntegerField()
 
     class Meta:

@@ -10,8 +10,8 @@
             <h1 class="text-center mb-20 course-title" style="font-size: 40px;">{{ course.title }}</h1>
         </div>
         <div class="col-md-7 col-sm-12">
-            <div class="embed-responsive embed-responsive-16by9" style="margin-bottom: 20px">
-                <iframe src="{{ content1.video_url }}" width="640" height="480" allow="autoplay" class="embed-responsive-item" style="z-index: 100"></iframe>
+            <div class="embed-responsive embed-responsive-16by9" style="margin-bottom: 20px;">
+                <iframe src="{{ content1.video_url }}" width="640" height="480" allow="autoplay" allowfullscreen="true" class="embed-responsive-item" style="z-index: 100"></iframe>
                 {% comment %} <video width="640" height="480" id="my-video" controls controlsList="nodownload" oncontextmenu="return false;">
                     <source type="video/mp4" src="{{ content1.videoURL}}">
                     Your browser does not support the video tag.
@@ -25,10 +25,15 @@
         <div class="col-md-5">
             <div class="list-group">
                 {% for outline in course_content %}
-                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-video-url="{{ outline.video_url }}" id="outline-item-{{forloop.counter}}" style="font-size: 1.5rem;">
-                    <strong>Lesson {{ forloop.counter }}: </strong>{{ outline.title }}
+                    {% if outline.download_link %}
+                        <a href="{{ outline.download_link.url }}" download class="list-group-item download-item list-group-item-action d-flex justify-content-between align-items-center" style="font-size: 1.5rem;">{{ outline.title }}</a>
+                    {% else %}    
+                    <a href="#" class="list-group-item video-item list-group-item-action d-flex justify-content-between align-items-center" data-video-url="{{ outline.video_url }}" id="outline-item-{{forloop.counter}}" style="font-size: 1.5rem;">
+                        <strong>Lesson {{ forloop.counter }}: </strong>{{ outline.title }}
+                     </a>    
+                    {% endif %}
                     {% comment %} <span class="badge bg-success">Completed</span> {% endcomment %}
-                </a>
+               
                 {% endfor %}
             </div>
         </div>
@@ -37,7 +42,7 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const contentItems = document.querySelectorAll(".list-group-item");
+        const contentItems = document.querySelectorAll(".video-item");
         contentItems.forEach(function (item) {
             item.addEventListener("click", function (e) {
             e.preventDefault();
